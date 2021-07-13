@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="description" content="The easiest way to make and accept payments from customers anywhere in the world.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The online and offline payment platform for businesses.">
+    <meta name="twitter:description" content="The easiest way to make and accept payments from customers anywhere in the world.">
+    <meta name="twitter:url" content="https://dashboard.flutterwave.com/">
+    <meta name="twitter:image:src" content="https://dashboard.flutterwave.com/static/img/home.png">
+    <meta name="twitter:site" content="@theflutterwave">
+    <meta name="twitter:creator" content="@theflutterwave">
+    <meta property="og:site_name" content="The online and offline payment platform for businesses.">
+    <meta property="og:title" content="The online and offline payment platform for businesses.">
+    <meta property="og:description" content="The easiest way to make and accept payments from customers anywhere in the world.">
+    <meta property="og:url" content="https://dashboard.flutterwave.com/">
+    <meta property="og:image" content="https://dashboard.flutterwave.com/static/img/home.png">
+    <link rel="icon" href="static/img/favicon.png">
+    <title>Flutterwave Dashboard</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css" rel="stylesheet">
+    <style src="vue-d3-barchart/dist/vue-d3-barchart.css"></style>
+    <link href="static/stylesheets/css/main.css?v=1.2.8" rel="stylesheet">
+    <script type="text/javascript" async="" src="https://widget.intercom.io/widget/jefr2803"></script>
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/vzAt61JclNZYHl6fEWIBqLbe/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-XR7MqpBQZ7rj79AkvDUBoyC0k/h38h0JQwfdLbDeumlU6srRetDW8JHponvmwca0"></script>
+    <script type="text/javascript" async="" src="https://djtflbt20bdde.cloudfront.net"></script>
+    <script src="https://connect.facebook.net/signals/config/729076454609091?v=2.9.43&amp;r=stable" async=""></script>
+    <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-WD86DMC"></script>
+    <script type="text/javascript" async="" src="//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js"></script>
+    <script type="text/javascript">
+        (function(e, a) {
+            if (!a.__SV) {
+                var b = window;
+                try {
+                    var c, l, i, j = b.location,
+                        g = j.hash;
+                    c = function(a, b) {
+                        return (l = a.match(RegExp(b + "=([^&]*)"))) ? l[1] : null
+                    };
+                    g && c(g, "state") && (i = JSON.parse(decodeURIComponent(c(g, "state"))), "mpeditor" === i.action && (b.sessionStorage.setItem("_mpcehash", g), history.replaceState(i.desiredHash || "", e.title, j.pathname + j.search)))
+                } catch (m) {}
+                var k, h;
+                window.mixpanel = a;
+                a._i = [];
+                a.init = function(b, c, f) {
+                    function e(b, a) {
+                        var c = a.split(".");
+                        2 == c.length && (b = b[c[0]], a = c[1]);
+                        b[a] = function() {
+                            b.push([a].concat(Array.prototype.slice.call(arguments,
+                                0)))
+                        }
+                    }
+                    var d = a;
+                    "undefined" !== typeof f ? d = a[f] = [] : f = "mixpanel";
+                    d.people = d.people || [];
+                    d.toString = function(b) {
+                        var a = "mixpanel";
+                        "mixpanel" !== f && (a += "." + f);
+                        b || (a += " (stub)");
+                        return a
+                    };
+                    d.people.toString = function() {
+                        return d.toString(1) + ".people (stub)"
+                    };
+                    k = "disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+                    for (h = 0; h < k.length; h++) e(d, k[h]);
+                    a._i.push([b, c, f])
+                };
+                a.__SV = 1.2;
+                b = e.createElement("script");
+                b.type = "text/javascript";
+                b.async = !0;
+                b.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ? MIXPANEL_CUSTOM_LIB_URL : "file:" === e.location.protocol && "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";
+                c = e.getElementsByTagName("script")[0];
+                c.parentNode.insertBefore(b, c)
+            }
+        })(document, window.mixpanel || []);
+        mixpanel.init("eeb0103404a2857dec4c324d2f2108c5");
+    </script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WD86DMC');
+    </script>
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '729076454609091');
+        fbq('track', 'PageView');
+    </script><noscript><img height=1 width=1 src="https://www.facebook.com/tr?id=284783105561382&ev=PageView&noscript=1"></noscript>
+    <script>
+        (function() {
+            var w = window;
+            var ic = w.Intercom;
+            if (typeof ic === "function") {
+                ic('reattach_activator');
+                ic('update', w.intercomSettings);
+            } else {
+                var d = document;
+                var i = function() {
+                    i.c(arguments);
+                };
+                i.q = [];
+                i.c = function(args) {
+                    i.q.push(args);
+                };
+                w.Intercom = i;
+                var l = function() {
+                    var s = d.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = 'https://widget.intercom.io/widget/jefr2803';
+                    var x = d.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                };
+                if (w.attachEvent) {
+                    w.attachEvent('onload', l);
+                } else {
+                    w.addEventListener('load', l, false);
+                }
+            }
+        })();
+    </script>
+    <link href="static/css/app.4f7987a5041c63d955a8ca6fdd34f1e0.css" rel="stylesheet">
+    <style type="text/css">
+        /* Chart.js */
+        
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+    <style type="text/css">
+        /* Chart.js */
+        
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+        
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+    <style type="text/css">
+        .mx-datepicker {
+            position: relative;
+            display: inline-block;
+            color: #73879c;
+            font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, sans-serif
+        }
+        
+        .mx-datepicker * {
+            box-sizing: border-box
+        }
+        
+        .mx-datepicker.disabled {
+            opacity: .7;
+            cursor: not-allowed
+        }
+        
+        .mx-datepicker-popup {
+            position: absolute;
+            width: 250px;
+            margin-top: 1px;
+            margin-bottom: 1px;
+            border: 1px solid #d9d9d9;
+            background-color: #fff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            z-index: 1000
+        }
+        
+        .mx-datepicker-popup.range {
+            width: 496px
+        }
+        
+        .mx-input {
+            display: inline-block;
+            width: 100%;
+            height: 34px;
+            padding: 6px 30px 6px 10px;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #555;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
+        }
+        
+        .mx-input.disabled,
+        .mx-input:disabled {
+            opacity: .7;
+            cursor: not-allowed
+        }
+        
+        .mx-input:focus {
+            outline: none
+        }
+        
+        .mx-input-icon {
+            top: 0;
+            right: 0;
+            position: absolute;
+            width: 30px;
+            height: 100%;
+            color: #888;
+            text-align: center;
+            font-style: normal
+        }
+        
+        .mx-input-icon:after {
+            content: "";
+            display: inline-block;
+            width: 0;
+            height: 100%;
+            vertical-align: middle
+        }
+        
+        .mx-input-icon__calendar {
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA00lEQVQ4T72SzQ2CQBCF54UGKIES6EAswQq0BS/A3PQ0hAt0oKVQgiVYAkcuZMwSMOyCyRKNe9uf+d6b2Qf6csGtL8sy7vu+Zebn/E5EoiAIwjRNH/PzBUBEGiJqmPniAMw+YeZkFSAiJwA3j45aVT0wsxGitwOjDGDnASBVvU4OLQARRURk9e4CAcSqWn8CLHp3Ae6MXAe/B4yzUeMkz/P9ZgdFUQzFIwD/B4yKgwMTos0OtvzCHcDRJ0gAzlmW1VYSq6oKu66LfQBTjC2AT+Hamxcml5IRpPq3VQAAAABJRU5ErkJggg==);
+            background-position: 50%;
+            background-repeat: no-repeat
+        }
+        
+        .mx-input-icon__close:before {
+            content: "\2716";
+            vertical-align: middle
+        }
+        
+        .mx-datepicker-top {
+            text-align: left;
+            padding: 0 12px;
+            line-height: 34px;
+            border-bottom: 1px solid rgba(0, 0, 0, .05)
+        }
+        
+        .mx-datepicker-top>span {
+            white-space: nowrap;
+            cursor: pointer
+        }
+        
+        .mx-datepicker-top>span:hover {
+            color: #1284e7
+        }
+        
+        .mx-datepicker-top>span:after {
+            content: "|";
+            margin: 0 10px;
+            color: #48576a
+        }
+        
+        .mx-datepicker-footer {
+            padding: 4px;
+            clear: both;
+            text-align: right;
+            border-top: 1px solid rgba(0, 0, 0, .05)
+        }
+        
+        .mx-datepicker-btn {
+            font-size: 12px;
+            line-height: 1;
+            padding: 7px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            border-radius: 3px
+        }
+        
+        .mx-datepicker-btn-confirm {
+            border: 1px solid rgba(0, 0, 0, .1);
+            color: #73879c
+        }
+        
+        .mx-datepicker-btn-confirm:hover {
+            color: #1284e7;
+            border-color: #1284e7
+        }
+    </style>
+    <style type="text/css">
+        .mx-calendar {
+            float: left;
+            width: 100%;
+            padding: 6px 12px
+        }
+        
+        .mx-calendar a {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer
+        }
+        
+        .mx-calendar-header {
+            line-height: 34px;
+            text-align: center
+        }
+        
+        .mx-calendar-header>a:hover {
+            color: #1284e7
+        }
+        
+        .mx-calendar__next-icon,
+        .mx-calendar__prev-icon {
+            font-size: 20px;
+            padding: 0 6px
+        }
+        
+        .mx-calendar__prev-icon {
+            float: left
+        }
+        
+        .mx-calendar__next-icon {
+            float: right
+        }
+        
+        .mx-calendar-content {
+            height: 224px;
+            overflow: hidden
+        }
+        
+        .mx-calendar-table {
+            width: 100%;
+            font-size: 12px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+        
+        .mx-calendar-table .today {
+            color: #20a0ff
+        }
+        
+        .mx-calendar-table .lastMonth,
+        .mx-calendar-table .nextMonth {
+            color: #ddd
+        }
+        
+        .mx-calendar-table td,
+        .mx-calendar-table th {
+            width: 32px;
+            height: 32px;
+            text-align: center
+        }
+        
+        .mx-calendar-table td {
+            cursor: pointer
+        }
+        
+        .mx-calendar-month>a:hover,
+        .mx-calendar-table td.inrange,
+        .mx-calendar-table td:hover,
+        .mx-calendar-year>a:hover {
+            background-color: #eaf8fe
+        }
+        
+        .mx-calendar-month>a.current,
+        .mx-calendar-table td.current,
+        .mx-calendar-year>a.current {
+            color: #fff;
+            background-color: #1284e7
+        }
+        
+        .mx-calendar-month a.disabled,
+        .mx-calendar-table td.disabled,
+        .mx-calendar-year a.disabled,
+        .mx-time-item.disabled {
+            cursor: not-allowed;
+            color: #ccc;
+            background-color: #f3f3f3
+        }
+        
+        .mx-calendar-month,
+        .mx-calendar-time,
+        .mx-calendar-year {
+            width: 100%;
+            height: 100%;
+            padding: 7px 0;
+            text-align: center
+        }
+        
+        .mx-calendar-year>a {
+            display: inline-block;
+            width: 40%;
+            margin: 1px 5%;
+            line-height: 40px
+        }
+        
+        .mx-calendar-month>a {
+            display: inline-block;
+            width: 30%;
+            line-height: 40px;
+            margin: 8px 1.5%
+        }
+        
+        .mx-time-list-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            border-top: 1px solid rgba(0, 0, 0, .05);
+            border-left: 1px solid rgba(0, 0, 0, .05);
+            box-sizing: border-box;
+            overflow-y: auto
+        }
+        
+        .mx-time-list-wrapper::-webkit-scrollbar {
+            width: 8px;
+            height: 8px
+        }
+        
+        .mx-time-list-wrapper::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, .05);
+            border-radius: 10px;
+            box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1)
+        }
+        
+        .mx-time-list-wrapper:hover::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, .2)
+        }
+        
+        .mx-time-list-wrapper:first-child {
+            border-left: 0
+        }
+        
+        .mx-time-picker-item {
+            text-align: left;
+            padding-left: 10px
+        }
+        
+        .mx-time-list {
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+        
+        .mx-time-item {
+            width: 100%;
+            font-size: 12px;
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer
+        }
+        
+        .mx-time-item:hover {
+            background-color: #eaf8fe
+        }
+        
+        .mx-time-item.cur-time {
+            color: #fff;
+            background-color: #1284e7
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8" async="" src="static/js/76.65a212d6fa3e24f94994.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" src="static/js/54.c3a268ca9961a0c03d22.js"></script>
+    <style type="text/css"></style>
+    <script type="text/javascript" charset="utf-8" async="" src="static/js/123.765eb34e04532455508b.js"></script>
+    <style type="text/css">
+        .input-select-tabs[data-v-43f3af24] {
+            padding: 2px 4px;
+            outline: none;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap
+        }
+        
+        .editable-text--fat-padding[data-v-43f3af24] {
+            padding-left: 10px!important;
+            padding-right: 10px!important
+        }
+        
+        .editable-text--narrow-padding[data-v-43f3af24] {
+            padding-left: 1px!important;
+            padding-right: 1px!important
+        }
+        
+        .editable-text[data-v-43f3af24] {
+            padding: 9px 1px 6px;
+            outline: none;
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            min-height: 35px;
+            display: inline-block
+        }
+        
+        [contenteditable=true][data-v-43f3af24]:empty:before {
+            content: attr(placeholder);
+            color: #637381;
+            display: block
+        }
+        
+        .tabs[data-v-43f3af24] {
+            background-color: rgba(242, 201, 76, .56);
+            padding: 3px 8px 1.5px;
+            color: #212b36;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            border-radius: 20px;
+            margin: 4px
+        }
+        
+        .tab-icon[data-v-43f3af24] {
+            padding: 0 0 0 6px
+        }
+        
+        .input-select-tabs .select-field[data-v-43f3af24] {
+            outline: none;
+            border: none;
+            background: transparent;
+            padding: 5px 10px;
+            margin: 4px;
+            margin-top: 6px;
+            resize: none;
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1
+        }
+        
+        .input__dropdown[data-v-43f3af24] {
+            width: 100%;
+            margin-top: 5px;
+            background-color: #fff;
+            position: absolute;
+            z-index: 1;
+            -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            border: 1px solid #c4cdd5;
+            top: 100%;
+            left: -.1%
+        }
+    </style>
+    <style type="text/css">
+        [v-cloak] {
+            display: none
+        }
+        
+        .Password {
+            max-width: 400px;
+            margin: 0 auto
+        }
+        
+        .Password__group {
+            position: relative
+        }
+        
+        .Password__strength-meter {
+            position: relative;
+            height: 3px;
+            background: #ddd;
+            margin: 10px auto 20px;
+            border-radius: 3px
+        }
+        
+        .Password__strength-meter:after,
+        .Password__strength-meter:before {
+            content: "";
+            height: inherit;
+            background: transparent;
+            display: block;
+            border-color: #fff;
+            border-style: solid;
+            border-width: 0 5px;
+            position: absolute;
+            width: 80px;
+            z-index: 10
+        }
+        
+        .Password__strength-meter:before {
+            left: 70px
+        }
+        
+        .Password__strength-meter:after {
+            right: 70px
+        }
+        
+        .Password__strength-meter--fill {
+            background: transparent;
+            height: inherit;
+            position: absolute;
+            width: 0;
+            border-radius: inherit;
+            transition: width .5s ease-in-out, background .25s
+        }
+        
+        .Password__strength-meter--fill[data-score="0"] {
+            background: darkred;
+            width: 20%
+        }
+        
+        .Password__strength-meter--fill[data-score="1"] {
+            background: #ff4500;
+            width: 40%
+        }
+        
+        .Password__strength-meter--fill[data-score="2"] {
+            background: orange;
+            width: 60%
+        }
+        
+        .Password__strength-meter--fill[data-score="3"] {
+            background: #9acd32;
+            width: 80%
+        }
+        
+        .Password__strength-meter--fill[data-score="4"] {
+            background: green;
+            width: 100%
+        }
+        
+        .Password__field {
+            background-color: #f1f1f1;
+            border: 1px solid #f1f1f1;
+            border-radius: 2px;
+            box-sizing: border-box;
+            font-size: 14px;
+            padding: 13px;
+            width: 100%
+        }
+        
+        .Password__icons {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center
+        }
+        
+        .Password__badge,
+        .Password__toggle {
+            line-height: 1.1;
+            margin-right: 13px
+        }
+        
+        .Password__badge {
+            position: relative;
+            color: #fff;
+            border-radius: 6px;
+            padding: 3px;
+            width: 30px;
+            height: 15px;
+            font-size: 14px
+        }
+        
+        .Password__badge--error {
+            background: red
+        }
+        
+        .Password__badge--success {
+            background: #1bbf1b
+        }
+        
+        .btn-clean {
+            appearance: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            color: #777;
+            padding: 0
+        }
+        
+        .btn-clean svg {
+            fill: currentColor
+        }
+        
+        .btn-clean:focus,
+        .btn-clean:hover {
+            color: #404b69
+        }
+        /*# sourceURL=/Users/jjuszczak/Projekte/Privat/vue-password-strength-meter/src/components/PasswordStrengthMeter.vue */
+        /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qanVzemN6YWsvUHJvamVrdGUvUHJpdmF0L3Z1ZS1wYXNzd29yZC1zdHJlbmd0aC1tZXRlci9zcmMvY29tcG9uZW50cy9QYXNzd29yZFN0cmVuZ3RoTWV0ZXIudnVlIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBLFVBQVUsWUFBWSxDQUNyQixBQUNELFVBQVUsZ0JBQWdCLGFBQWEsQ0FDdEMsQUFDRCxpQkFBaUIsaUJBQWlCLENBQ2pDLEFBQ0QsMEJBQTBCLGtCQUFrQixXQUFXLGdCQUFnQixzQkFBc0IsaUJBQWlCLENBQzdHLEFBQ0QsaUVBQWlFLFdBQVcsZUFBZSx1QkFBdUIsY0FBYyxrQkFBa0IsbUJBQW1CLG1CQUF5QixrQkFBa0IsV0FBVyxVQUFVLENBQ3BPLEFBQ0QsaUNBQWlDLFNBQVMsQ0FDekMsQUFDRCxnQ0FBZ0MsVUFBVSxDQUN6QyxBQUNELGdDQUFnQyx1QkFBdUIsZUFBZSxrQkFBa0IsUUFBUSxzQkFBc0IsZ0RBQW1ELENBQ3hLLEFBQ0QsZ0RBQWdELG1CQUFtQixTQUFTLENBQzNFLEFBQ0QsZ0RBQWdELG1CQUFxQixTQUFTLENBQzdFLEFBQ0QsZ0RBQWdELGtCQUFrQixTQUFTLENBQzFFLEFBQ0QsZ0RBQWdELG1CQUF1QixTQUFTLENBQy9FLEFBQ0QsZ0RBQWdELGlCQUFpQixVQUFVLENBQzFFLEFBQ0QsaUJBQWlCLHlCQUF5Qix5QkFBeUIsa0JBQWtCLHNCQUFzQixlQUFlLGFBQWEsVUFBVSxDQUNoSixBQUNELGlCQUFpQixrQkFBa0IsTUFBTSxRQUFRLFlBQVksYUFBYSxtQkFBbUIseUJBQXlCLGtCQUFrQixDQUN2SSxBQUdELG1DQUZrQixnQkFBZ0IsaUJBQWlCLENBR2xELEFBREQsaUJBQWlCLGtCQUFrQixXQUFZLGtCQUFrQixZQUFZLFdBQVcsWUFBWSxjQUFlLENBQ2xILEFBQ0Qsd0JBQXdCLGNBQWMsQ0FDckMsQUFDRCwwQkFBMEIsa0JBQWtCLENBQzNDLEFBQ0QsV0FBVyxnQkFBZ0IsZ0JBQWdCLFlBQVksZUFBZSxhQUFhLFdBQWMsU0FBUyxDQUN6RyxBQUNELGVBQWUsaUJBQWlCLENBQy9CLEFBQ0Qsa0NBQWtDLGFBQWEsQ0FDOUMiLCJmaWxlIjoiUGFzc3dvcmRTdHJlbmd0aE1ldGVyLnZ1ZSIsInNvdXJjZXNDb250ZW50IjpbIlxuW3YtY2xvYWtde2Rpc3BsYXk6bm9uZVxufVxuLlBhc3N3b3Jke21heC13aWR0aDo0MDBweDttYXJnaW46MCBhdXRvXG59XG4uUGFzc3dvcmRfX2dyb3Vwe3Bvc2l0aW9uOnJlbGF0aXZlXG59XG4uUGFzc3dvcmRfX3N0cmVuZ3RoLW1ldGVye3Bvc2l0aW9uOnJlbGF0aXZlO2hlaWdodDozcHg7YmFja2dyb3VuZDojREREO21hcmdpbjoxMHB4IGF1dG8gMjBweDtib3JkZXItcmFkaXVzOjNweFxufVxuLlBhc3N3b3JkX19zdHJlbmd0aC1tZXRlcjpiZWZvcmUsLlBhc3N3b3JkX19zdHJlbmd0aC1tZXRlcjphZnRlcntjb250ZW50OicnO2hlaWdodDppbmhlcml0O2JhY2tncm91bmQ6dHJhbnNwYXJlbnQ7ZGlzcGxheTpibG9jaztib3JkZXItY29sb3I6I0ZGRjtib3JkZXItc3R5bGU6c29saWQ7Ym9yZGVyLXdpZHRoOjAgNXB4IDAgNXB4O3Bvc2l0aW9uOmFic29sdXRlO3dpZHRoOjgwcHg7ei1pbmRleDoxMFxufVxuLlBhc3N3b3JkX19zdHJlbmd0aC1tZXRlcjpiZWZvcmV7bGVmdDo3MHB4XG59XG4uUGFzc3dvcmRfX3N0cmVuZ3RoLW1ldGVyOmFmdGVye3JpZ2h0OjcwcHhcbn1cbi5QYXNzd29yZF9fc3RyZW5ndGgtbWV0ZXItLWZpbGx7YmFja2dyb3VuZDp0cmFuc3BhcmVudDtoZWlnaHQ6aW5oZXJpdDtwb3NpdGlvbjphYnNvbHV0ZTt3aWR0aDowO2JvcmRlci1yYWRpdXM6aW5oZXJpdDt0cmFuc2l0aW9uOndpZHRoIDAuNXMgZWFzZS1pbi1vdXQsIGJhY2tncm91bmQgMC4yNXNcbn1cbi5QYXNzd29yZF9fc3RyZW5ndGgtbWV0ZXItLWZpbGxbZGF0YS1zY29yZT0nMCdde2JhY2tncm91bmQ6ZGFya3JlZDt3aWR0aDoyMCVcbn1cbi5QYXNzd29yZF9fc3RyZW5ndGgtbWV0ZXItLWZpbGxbZGF0YS1zY29yZT0nMSdde2JhY2tncm91bmQ6b3JhbmdlcmVkO3dpZHRoOjQwJVxufVxuLlBhc3N3b3JkX19zdHJlbmd0aC1tZXRlci0tZmlsbFtkYXRhLXNjb3JlPScyJ117YmFja2dyb3VuZDpvcmFuZ2U7d2lkdGg6NjAlXG59XG4uUGFzc3dvcmRfX3N0cmVuZ3RoLW1ldGVyLS1maWxsW2RhdGEtc2NvcmU9JzMnXXtiYWNrZ3JvdW5kOnllbGxvd2dyZWVuO3dpZHRoOjgwJVxufVxuLlBhc3N3b3JkX19zdHJlbmd0aC1tZXRlci0tZmlsbFtkYXRhLXNjb3JlPSc0J117YmFja2dyb3VuZDpncmVlbjt3aWR0aDoxMDAlXG59XG4uUGFzc3dvcmRfX2ZpZWxke2JhY2tncm91bmQtY29sb3I6I2YxZjFmMTtib3JkZXI6MXB4IHNvbGlkICNmMWYxZjE7Ym9yZGVyLXJhZGl1czoycHg7Ym94LXNpemluZzpib3JkZXItYm94O2ZvbnQtc2l6ZToxNHB4O3BhZGRpbmc6MTNweDt3aWR0aDoxMDAlXG59XG4uUGFzc3dvcmRfX2ljb25ze3Bvc2l0aW9uOmFic29sdXRlO3RvcDowO3JpZ2h0OjA7aGVpZ2h0OjEwMCU7ZGlzcGxheTpmbGV4O2ZsZXgtZGlyZWN0aW9uOnJvdztqdXN0aWZ5LWNvbnRlbnQ6ZmxleC1lbmQ7YWxpZ24taXRlbXM6Y2VudGVyXG59XG4uUGFzc3dvcmRfX3RvZ2dsZXtsaW5lLWhlaWdodDoxLjE7bWFyZ2luLXJpZ2h0OjEzcHhcbn1cbi5QYXNzd29yZF9fYmFkZ2V7cG9zaXRpb246cmVsYXRpdmU7Y29sb3I6d2hpdGU7Ym9yZGVyLXJhZGl1czo2cHg7cGFkZGluZzozcHg7d2lkdGg6MzBweDtoZWlnaHQ6MTVweDtmb250LXNpemU6MTRweDtsaW5lLWhlaWdodDoxLjE7bWFyZ2luLXJpZ2h0OjEzcHhcbn1cbi5QYXNzd29yZF9fYmFkZ2UtLWVycm9ye2JhY2tncm91bmQ6cmVkXG59XG4uUGFzc3dvcmRfX2JhZGdlLS1zdWNjZXNze2JhY2tncm91bmQ6IzFiYmYxYlxufVxuLmJ0bi1jbGVhbnthcHBlYXJhbmNlOm5vbmU7YmFja2dyb3VuZDpub25lO2JvcmRlcjpub25lO2N1cnNvcjpwb2ludGVyO291dGxpbmU6bm9uZTtjb2xvcjojNzc3Nzc3O3BhZGRpbmc6MFxufVxuLmJ0bi1jbGVhbiBzdmd7ZmlsbDpjdXJyZW50Q29sb3Jcbn1cbi5idG4tY2xlYW46aG92ZXIsLmJ0bi1jbGVhbjpmb2N1c3tjb2xvcjojNDA0QjY5XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */
+    </style>
+    <style type="text/css">
+        .Password[data-v-c3d050c8] {
+            max-width: unset;
+            margin: unset
+        }
+    </style>
+</head>
+
+<body class="nprogress-container" page-name="generalsettings">
+    <div id="app">
+        <div class="positionRelative">
+            <!---->
+            <div class="">
+                <!---->
+                <!---->
+                <div>
+                    <nav class="nav nav--main hidden--xs">
+                        <div class="nav__right">
+                            <div class="nav__item nav__item--top nav__item--search"><span class="nav__item__link nav__item__link--top"><span class="search hidden--xs"><span class="search__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="#919EAB" fill-rule="evenodd" d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8m9.707 4.293l-4.82-4.82A5.968 5.968 0 0 0 14 8 6 6 0 0 0 2 8a6 6 0 0 0 6 6 5.968 5.968 0 0 0 3.473-1.113l4.82 4.82a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414"></path></svg></span>                                <span class="search__input"><input type="text" placeholder="Search transactions, customers, cards, subaccounts and payment references." class="form__input"></span></span>
+                                </span>
+                                <!---->
+                            </div>
+                            <div class="search-overlay"></div>
+                            <div class="hide">
+                                <div class="product-alert__overlay"></div>
+                                <div class="product-alert">
+                                    <div class="product-alert__header">Product Update</div>
+                                    <h2 class="product-alert__title">
+                                        <div>Introducing
+                                            <span>Search</span></div>
+                                    </h2>
+                                    <div class="product-alert__content">
+                                        <div>
+                                            Easily find your customers or payments at any point in your dashboard. Search transaction references, customer names, customer emails, Payment amount and get quick and helpful results.
+                                        </div>
+                                    </div>
+                                    <div class="product-alert__footer"><button class="btn btn--compact btn--primary">Got it</button></div>
+                                </div>
+                            </div>
+                            <div class="nav__item nav__item--top hidden--xs">
+                                <div class="nav__item__link nav__item__link--top"><span class="badge"><span class="badge__button"><span class="testmodebadge__text"> You are live!</span> <span class="nav__item__link__icon"><svg enable-background="new 0 0 64 64" version="1.1" viewBox="0 0 64 64" width="10" height="10" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><circle cx="31.978" cy="50.363" r="2"></circle> <path d="m31.533 13.38c-6.2686 0-10.162 3.8936-10.162 10.162 0 0.5527 0.44719 1 1 1 0.55269 0 1-0.4473 1-1 0-5.1875 2.9746-8.1621 8.1621-8.1621 7.876 0 9.0517 5.6719 9.0517 9.0527 0 3.2881-2.7021 7.0293-6.2851 8.7012-4.0557 1.8916-3.3467 8.5283-3.3145 8.8096 0.057699 0.5107 0.4903 0.8867 0.9922 0.8867 0.038097 0 0.076199-0.0020027 0.1143-0.0068016 0.5488-0.0625 0.94331-0.5577 0.8799-1.1065-0.0058975-0.054699-0.5479-5.501 2.1738-6.7705 4.3105-2.0117 7.4394-6.4336 7.4394-10.514-1e-7 -6.9209-4.1318-11.053-11.052-11.053z"></path> <path d="m32 0c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32-14.327-32-32-32zm0 62c-16.542 0-30-13.458-30-30 0-16.542 13.458-30 30-30 16.542 0 30 13.458 30 30 0 16.542-13.458 30-30 30z"></path></svg></span></span>
+                                    </span>
+                                    <span class="badge__info badge__info--top badge__info__info--js"><span class="badge__info__top" style="border-bottom: none;">
+                You're now live and can accept payments!
+            </span></span>
+                                </div>
+                            </div>
+                            <div class="nav__item nav__item--top"><span class="nav__item__link nav__item__link--top"><span class="notification-bell"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="21" viewBox="0 0 18 21"><g fill="#919EAB" fill-rule="nonzero"><path d="M17.051 15.213c-.608-.415-1.605-1.758-1.605-6.13 0-4.102-2.481-5.738-4.305-6.421.024-.147.048-.318.048-.464C11.19.977 10.216 0 9 0 7.784 0 6.81.977 6.81 2.198c0 .146.025.317.05.464-1.825.659-4.306 2.32-4.306 6.422 0 4.395-.997 5.738-1.605 6.129-.511.342-.803.928-.803 1.514 0 1.025.827 1.831 1.824 1.831h4.062C6.324 19.974 7.565 21 9 21a3.049 3.049 0 0 0 2.968-2.417h4.062c.997 0 1.824-.83 1.824-1.832 0-.61-.292-1.196-.803-1.538zM9 .977c.681 0 1.216.537 1.216 1.22 0 .074 0 .123-.024.196-.997-.22-1.922-.098-2.408 0 0-.073-.025-.122-.025-.195C7.784 1.514 8.32.977 9 .977zM3.527 9.084c0-3.712 2.287-5.128 4.184-5.665h.024s.535-.171 1.29-.171c.389 0 .802.049 1.264.195h.025c1.897.537 4.183 1.954 4.183 5.665 0 2.833.39 4.86 1.192 6.056H2.335c.779-1.245 1.192-3.272 1.192-6.08zM9 20.024c-.9 0-1.703-.611-1.97-1.441h3.94A2.099 2.099 0 0 1 9 20.023zm7.03-2.418H1.97a.864.864 0 0 1-.851-.855c0-.244.097-.464.292-.635h15.227c.17.171.292.391.292.635-.049.464-.438.855-.9.855z"></path> <path d="M6.81 4.713c-.072.049-1.92 1.123-2.188 3.052-.049.269.146.513.413.562h.073c.243 0 .438-.171.487-.415.194-1.441 1.678-2.32 1.702-2.32a.46.46 0 0 0 .17-.66c-.121-.292-.413-.366-.656-.22z"></path></g></svg></span></span>
+                            </div>
+                            <div class="nav__item nav__item--top"><a href="https://flutterwavedevelopers.readme.io/docs" target="_blank" class="nav__item__link nav__item__link--top">Documentation</a></div>
+                            <div class="nav__item nav__item--top"><span class="nav__item__link nav__item__link--top"><img src="static/img/avatar@3x.png" class="avatar__icon imgCircle"></span>
+                                <div class="dropdown">
+                                    <div class="dropdown__item">
+                                        <div class="dropdown__item__link dropdown__item__link--user">regorprotocol@gmail.com</div>
+                                    </div>
+                                    <div class="dropdown__item">
+                                        <div class="dropdown__item__link">Explore the Dashboard</div>
+                                    </div>
+                                    <div class="dropdown__item">
+                                        <div class="dropdown__item__link">Settings</div>
+                                    </div>
+                                    <div class="dropdown__item">
+                                        <div class="dropdown__item__link">Sign out</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="notifications">
+                        <div class="notifications__header">
+                            <div class="notifications__header__title">Notifications</div>
+                            <div class="notifications__header__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="#637381" fill-rule="evenodd" d="M17.707 9.293l-5-5a.999.999 0 1 0-1.414 1.414L14.586 9H3a1 1 0 1 0 0 2h11.586l-3.293 3.293a.999.999 0 1 0 1.414 1.414l5-5a.999.999 0 0 0 0-1.414"></path></svg></div>
+                        </div>
+                        <div class="notifications__content">
+                            <div class="notifications__content__item">
+                                <div class="notifications__content__item__title">Introducing Transfers</div>
+                                <div class="notifications__content__item__text">With Transfers, you can send money to any bank account.</div>
+                            </div>
+                            <div class="notifications__content__item">
+                                <div class="notifications__content__item__title">🎉 New dashboard! 🎉</div>
+                                <div class="notifications__content__item__text">We set out to build a set of tools to make payments in Africa easy and reliable. We have redesigned the entire dashboard experience based on your feedback.</div>
+                            </div>
+                        </div>
+                        <div class="notifications__more hide">See More</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="navigation-menu"><svg height="20px" version="1.1" viewBox="0 0 69 51" width="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill-rule="evenodd" stroke="none" stroke-width="1"><g fill-rule="nonzero" stroke="none"><g><rect height="6.2072333" rx="3.10361665" width="69" x="0" y="0"></rect> <rect height="6.2072333" rx="3.10361665" width="69" x="0" y="22"></rect> <rect height="6.2072333" rx="3.10361665" width="69" x="0" y="44.7927667"></rect></g></g></g></svg></div>
+                    <nav class="nav nav--sidebar nav--sidebar-open">
+                        <div class="nav__section">
+                            <div class="nav__section__content">
+                                <div class="nav__section__content__group no--padding__yt">
+                                    <div class="nav__item">
+                                        <div class="nav__item__link nav__item__link--noHover">
+                                            <div class="company company--negativeTopMargin">
+                                                <div class="company__row">
+                                                    <div class="company__content">
+                                                        <div class="company__name">iammrjude</div>
+                                                        <div class="company__position">Merchant ID: 00849578</div>
+                                                    </div>
+                                                    <div class="company__toggle"><svg height="10" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg"><path d="M6.03 3.03L3.025.025.02 3.03h6.01zM5.88 7.071L2.975 9.975.07 7.07H5.88z" fill="#637381" fill-rule="evenodd"></path></svg></div>
+                                                </div>
+                                                <div class="company__list">
+                                                    <div class="company__list__item hidden--xs"><input placeholder="Quick Search" type="text" class="form__input" style="border-radius: 100px;"></div>
+                                                    <div class="company__list__item">
+                                                        <!---->
+                                                    </div>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nav__section__content__group">
+                                    <div class="nav__item hidden--xs hide"><a href="/dashboard/setup" class="nav__item__link nav__item__link--flex"><span class="nav__item__link__icon"><svg height="18" viewBox="0 0 20 18" width="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="nonzero"><path d="M17.643 13.029h-.435v-.867h-6.456v.867H2.361c-1.206 0-2.184.652-2.184 1.456 0 .804.978 1.456 2.184 1.456h8.391v1.207h6.456V15.94h.434c1.207 0 2.184-.652 2.184-1.456 0-.804-.977-1.456-2.183-1.456z" stroke="none"></path> <path d="M2.36 4.294h8.918v.844h6.455V4.29c1.164-.031 2.093-.669 2.093-1.452 0-.784-.929-1.421-2.093-1.453V.152h-6.455v1.23H2.36c-1.206 0-2.184.653-2.184 1.457 0 .803.978 1.455 2.184 1.455z" stroke="none"></path> <path d="M17.643 7.206h-6.89v-1.14H4.295v1.14H2.361c-1.206 0-2.184.651-2.184 1.456 0 .804.978 1.456 2.184 1.456h1.935v.934h6.456v-.934h6.89c1.207 0 2.184-.652 2.184-1.456 0-.805-.977-1.456-2.183-1.456z" stroke="none"></path></g></svg></span> <span class="nav__item__link__text">Setup Rave</span></a></div>
+                                    <!---->
+                                    <div class="nav__item"><a href="overview.html" class="nav__item__link nav__item__link--flex active"><span class="nav__item__link__icon"><svg height="18" viewBox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M10.84 7.608A.692.692 0 0 0 10.136 7a.692.692 0 0 0-.705.61l-1.33 6.506a3.319 3.319 0 0 0-.028.709c.086 1.242 1.074 1.863 2.063 1.863.988 0 1.977-.621 2.062-1.863a3.319 3.319 0 0 0-.027-.709l-1.33-6.507zm3.966 6.106c-.409-.296-.777-.818-1.287-.575a.803.803 0 0 0-.381.414c-.176.408-.102.84-.123 1.265-.054 1.14-.884 2.17-1.94 2.57a2.658 2.658 0 0 1-.954.176c-1.47-.007-2.812-1.309-2.866-2.777-.016-.453.074-.913-.138-1.35a.762.762 0 0 0-.294-.329c-.54-.316-1.067.18-1.445.605-.348.39-.887.796-1.34.535-.156-.089-.262-.242-.357-.394a6.766 6.766 0 0 1-1.001-3.066l.613-.02a.76.76 0 0 0 .736-.762v-.003a.773.773 0 0 0-.745-.77l-.6-.022c0-2.212 1.63-3.814 1.569-3.873l.464.442a.767.767 0 0 0 1.07-.012l.002-.002a.755.755 0 0 0 .017-1.05l-.422-.45a6.66 6.66 0 0 1 3.827-1.583l.02.61a.76.76 0 0 0 .763.736h.015a.76.76 0 0 0 .758-.734l.022-.615a6.656 6.656 0 0 1 3.826 1.59l-.403.436a.769.769 0 0 0 1.091 1.083l.43-.405a6.66 6.66 0 0 1 1.584 3.827l-.559.019a.79.79 0 0 0-.06 1.577l.591.065s-.68 4.15-2.483 2.842zM0 10c0 5.523 4.477 10 10 10s10-4.477 10-10S15.523 0 10 0 0 4.477 0 10z" fill-rule="nonzero" stroke="none"></path></svg></span> <span class="nav__item__link__text">Overview</span></a></div>
+                                </div>
+                                <div class="nav__section__content__group">
+                                    <div class="nav__section__title">Your business</div>
+                                    <div class="nav__item positionRelative"><a href="/dashboard/transactions/all" class="nav__item__link nav__item__link--flex"><span class="nav__item__link__icon"><svg height="18" viewBox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="10" cy="10" fill="none" r="10" stroke-width="2"></circle> <path d="M8.13 11.52l4.378-4.578 1.098 1.098L14.473 3l-5.038.868 1.098 1.098-4.381 4.381z" fill-opacity="0.991" fill-rule="nonzero" stroke="none"></path> <path d="M12.7 7.793l-4.735 4.735-1.097-1.097L6 16.469l5.038-.868-1.098-1.098 4.68-4.68z" fill-opacity="0.991" fill-rule="nonzero" stroke="none"></path></g></svg></span> <span class="nav__item__link__text">Transactions</span></a>
+                                        <!---->
+                                    </div>
+                                    <div id="run-element-without-popover" class="nav__item positionRelative"><a href="/dashboard/customers" class="nav__item__link nav__item__link--flex"><span class="nav__item__link__icon"><svg height="19" viewBox="0 0 22 23" width="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><path d="M11.569 4.122a3.22 3.22 0 0 0-3.222 3.22c0 .895.277 2.083.824 3.023.548.941 1.34 1.624 2.398 1.624s1.849-.683 2.396-1.624c.547-.94.824-2.128.824-3.022 0-1.781-1.44-3.22-3.22-3.22z" stroke="none"></path> <path d="M7.083 4.32a2.517 2.517 0 0 0-2.521 2.52c0 .704.219 1.643.65 2.384.43.74 1.047 1.27 1.871 1.27.562 0 1.021-.244 1.401-.638-.354-.845-.528-1.757-.528-2.513 0-.89.323-1.705.859-2.334a2.511 2.511 0 0 0-1.732-.69z" fill-opacity="0.8" stroke="none"></path> <path d="M8.657 10.233c-.42.393-.95.652-1.574.652-.514 0-.96-.174-1.337-.455a1.03 1.03 0 0 1-.067.167.643.643 0 0 1-.337.315c-.453.172-1.202.209-1.897.426-.661.206-1.227.534-1.423 1.23a7.374 7.374 0 0 0 2.875 1.539c.373-.838 1.167-1.28 1.966-1.53.942-.294 1.943-.369 2.36-.527.08-.03.135-.082.188-.184.048-.094.085-.229.108-.396a4.536 4.536 0 0 1-.685-.908 5.807 5.807 0 0 1-.177-.329z" fill-opacity="0.8" stroke="none"></path> <path d="M13.305 11.751c-.483.386-1.063.628-1.736.628-.661 0-1.232-.233-1.71-.606a1.3 1.3 0 0 1-.1.271.755.755 0 0 1-.398.371c-.552.21-1.5.26-2.381.535-.848.265-1.587.697-1.832 1.613 3.547 3.123 9.293 3.123 12.84 0-.244-.916-.983-1.348-1.831-1.613-.882-.276-1.83-.325-2.382-.535a.706.706 0 0 1-.382-.389 1.43 1.43 0 0 1-.088-.275z" stroke="none"></path> <circle cx="10" cy="10.875" fill="none" r="10" stroke-width="2"></circle></g></svg></span> <span class="nav__item__link__text">Customers</span></a>
+                                        <!---->
+                                    </div>
+                                    <div class="nav__item positionRelative"><a href="balance.html" class="nav__item__link nav__item__link--flex"><span class="nav__item__link__icon"><svg height="16" viewBox="0 0 25 16" width="18" xmlns="http://www.w3.org/2000/svg"><g fill="#919EAB" fill-rule="nonzero" stroke="none"><path d="M20.621 4.684a69.87 69.87 0 0 1-.356-1.24c-.135-.487-.373-1.06-.373-1.572-.66.31-1.302.647-2.028.757-.429.065-.826.037-1.256.029-.41-.008-.816.02-1.227.007-.61-.021-1.227-.043-1.832-.133a2.278 2.278 0 0 0-1.151.133c-.281.11-.45.311-.693.466-.203.128-.409.252-.617.372-.26.15-.66.267-.862.481-.284.299-.538.586-.69.973-.14.358-.25.732-.483 1.044-.178.235-.427.418-.556.69-.14.297.081.494.354.587.34.117.738.074 1.05-.102.637-.36.897-1.114 1.453-1.565.551-.449 1.509-.763 2.175-.406.347.185.624.476.969.669.375.21.77.377 1.141.595.78.457 1.475 1.031 2.296 1.42.795.375 1.651.704 2.29 1.333.272-.204.542-.412.797-.637.18-.158.323-.348.504-.502.138-.118.287-.222.45-.303-.738-.825-1.1-2.052-1.355-3.096z"></path> <path d="M20.084 9.95c-.4-.706-1.149-1.093-1.86-1.41-.813-.363-1.526-.818-2.263-1.314-.668-.45-1.416-.837-2.146-1.177-.108-.05-.099-.127-.192-.206-.126-.11-.26-.221-.42-.277-.35-.123-.843.014-1.165.167-.661.315-.953 1.015-1.456 1.505-.542.53-1.4.76-2.104.394-.201-.105-.404-.297-.474-.515-.112-.353.104-.715.317-.98.242-.302.495-.55.633-.922.142-.382.256-.748.5-1.08-.474.107-.96.288-1.449.282-.283-.004-.51-.096-.767-.185l-1.16-.402c-.12-.041-.125.123-.167.228a34532.575 34532.575 0 0 1-2.26 5.649c.336.1.785.205 1.064.432.379.308.81.559 1.226.812.09.055.137.133.209.042a.824.824 0 0 1 .253-.216.99.99 0 0 1 .638-.083c.464.081.913.39 1.152.797.408-.303.939-.447 1.44-.32.203.051.395.157.535.314a.907.907 0 0 1 .162.258c.05.12.269.016.402.01.464-.02 1.058.106 1.222.601.07.215.048.487.15.687.048.095.204.075.29.078.159.006.3.033.44.11.518.289.592.909.526 1.447-.025.208-.041.215.164.296a2.142 2.142 0 0 0 .831.15c.518-.032.961-.313.992-.869.422.208 1.037.365 1.426 0 .316-.296.315-.781.17-1.162.556.174 1.135.016 1.404-.525.215-.434.023-1.078-.138-1.505.51.329 1.173.68 1.675.138.323-.349.373-.812.2-1.25z"></path> <path d="M7.696 11.635c-.218-.262-.466-.416-.806-.457-.235-.028-.43.007-.466.292-.047.36.178.881.473 1.098.213.156.792.46.972.09.148-.303-.04-.756-.173-1.023-.113-.136.056.113 0 0zM9.932 12.187c.013-.298-.447-.527-.684-.57-.388-.07-.789.199-.993.506-.326.491-.394 1.217-.012 1.699.325.41 1 .2 1.295-.138.208-.237.326-.542.39-.847.024-.114.04-.229.05-.345.008-.118-.052-.198-.046-.305 0-.009-.004.062 0 0zM11.71 13.305c-.114-.213-.037-.51-.178-.7a.796.796 0 0 0-.452-.283c-.2-.051-.452-.141-.624.003-.434.363-.685 1.108-.628 1.654.046.445.38.926.896.756.317-.105.549-.386.712-.665.096-.166.356-.605.274-.765-.082-.155.002.003 0 0zM12.362 13.591c-.14-.016-.295-.065-.42.01a.781.781 0 0 0-.271.317 1.817 1.817 0 0 0-.21.783c-.005.338.17.684.528.722.953.103 1.19-1.5.373-1.832-.051-.005.186.076 0 0zM22.882 7.68s-.846-.07-1.375-1.868c0 0-1.057-3.279-1.093-3.843 0 0-.281-.705.212-.81L22.53.205l2.432 6.822s-.423.23-2.08.652zM3.704 2.287l1.692.634s.388.07-.035 1.058l-2.326 5.71s-.283.46-1.552.036L.037 9.126l3.068-7.05.6.21z"></path></g></svg></span> <span class="nav__item__link__text">Balance</span></a>
+                                        <!---->
+                                    </div>
+                                    <div class="nav__item positionRelative"><a href="transfers.html" class="nav__item__link nav__item__link--flex"><span class="nav__item__link__icon"><svg height="18" viewBox="0 0 20 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.865.36l3.334 3.275c1.342 1.347-.67 3.367-2.013 2.02l-.013-.013c-.413-.42-.75-.282-.75.31V16.43a1.43 1.43 0 0 1-1.432 1.426h.017a1.427 1.427 0 0 1-1.432-1.426V5.953c0-.596-.336-.732-.75-.31l-.014.013C6.47 7.002 4.457 4.982 5.8 3.636L9.09.365A1.267 1.267 0 0 1 10.864.36zM2.929 6.5a1.428 1.428 0 0 1 2.02 2.02 7.142 7.142 0 1 0 10.1 0A1.428 1.428 0 0 1 17.07 6.5c3.905 3.905 3.905 10.236 0 14.141-3.905 3.905-10.236 3.905-14.141 0-3.905-3.905-3.905-10.236 0-14.141z" fill-rule="nonzero" stroke="none"></path></svg></span> <span class="nav__item__link__text nav__item__link__text--flex positionRelative"><span class="nav__item__link__text__item">Transfers</span> <!----> <span class="nav__item__link__text__item"><span class="tag tag--beta tag--beta--noMobile hide">Beta</span></span></span></a>
+                                        <!---->
+                                    </div>
+                                    <!---->
+
+                                    <!---->
+                                </div>
+                                <div class="nav__item positionRelative hide"><a href="/dashboard/salesmode" class="nav__item__link nav__item__link--flex hidden--xs"><span class="nav__item__link__icon"><svg fill="none" height="18" viewBox="0 0 15 18" width="15" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M13.4269 5.34073C13.4957 5.34073 13.5531 5.395 13.5582 5.46516L14.4796 17.8552C14.4824 17.8925 14.4698 17.9294 14.4449 17.9569C14.42 17.9844 14.385 18 14.3484 18H0.131619C0.0950243 18 0.0600089 17.9844 0.0351295 17.9568C0.0101185 17.9293 -0.00238696 17.8924 0.000377411 17.8551L0.921835 5.46516C0.926969 5.395 0.984363 5.34073 1.05308 5.34073H3.42254V4.66736C3.42254 2.5138 5.13514 0.761841 7.24001 0.761841C9.34488 0.761841 11.0575 2.5138 11.0575 4.66736V5.34073H13.4269ZM7.23989 1.83924C5.71553 1.83924 4.47551 3.108 4.47551 4.66738V5.34074H10.0043V4.66738C10.0043 3.108 8.76424 1.83924 7.23989 1.83924ZM3.94912 9.11158C3.22314 9.11158 2.63275 8.50744 2.63275 7.76485C2.63275 7.22737 2.89603 6.74309 3.42257 6.53057V7.76485C3.42257 8.06194 3.65886 8.30355 3.94912 8.30355C4.23938 8.30355 4.47567 8.06194 4.47567 7.76485V6.53138C5.00222 6.7439 5.26549 7.23182 5.26549 7.76485C5.26549 8.50744 4.6751 9.11158 3.94912 9.11158ZM9.21475 7.76485C9.21475 8.50744 9.80514 9.11158 10.5311 9.11158C11.2571 9.11158 11.8475 8.50744 11.8475 7.76485C11.8475 7.23182 11.5842 6.7439 11.0577 6.53138V7.76485C11.0577 8.06194 10.8214 8.30355 10.5311 8.30355C10.2409 8.30355 10.0046 8.06194 10.0046 7.76485V6.53057C9.47802 6.74309 9.21475 7.22737 9.21475 7.76485Z" fill-rule="evenodd"></path></svg></span> <span class="nav__item__link__text">Sales Mode</span></a>
+                                    <!---->
+                                </div>
+                                <!---->
+                            </div>
+
+                            <div class="nav__section__content__group">
+                                <div class="nav__section__title">Billing tools</div>
+                                <div class="nav__item positionRelative"><a href="/dashboard/payments/plans" class="nav__item__link nav__item__link--flex"><span class="nav__item__link__icon"><svg height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="9" cy="9" fill="#FFF" r="9" stroke-width="1.8"></circle> <path d="M6.376 14.231c.06.02.12.04.18.04.2 0 .4-.12.46-.32.1-.26-.04-.54-.3-.64a4.532 4.532 0 0 1-2.64-5.8 4.523 4.523 0 0 1 2.34-2.52c1.1-.5 2.32-.54 3.44-.12 1.18.44 2.66 2.343 3.14 3.503h-2.78l2.78 2.477 1.774-2.477h-.967c-.52-1.6-1.987-3.823-3.587-4.423a5.373 5.373 0 0 0-4.2.16c-1.34.62-2.36 1.7-2.86 3.08-1.08 2.8.38 5.98 3.22 7.04z" fill-rule="nonzero" stroke-width="2"></path></g></svg></span> <span class="nav__item__link__text">Payment Plans</span></a>
+                                    <!---->
+                                    <!---->
+                                    <!---->
+                                </div>
+                                <div class="nav__item hide"><a href="/dashboard/salesmode" class="nav__item__link nav__item__link--flex"><span class="nav__item__link__icon"><svg height="16" viewBox="0 0 20 20" width="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M19 0h-9c-.265 0-.52.106-.707.293l-9 9a.999.999 0 0 0 0 1.414l9 9a.997.997 0 0 0 1.414 0l9-9A.997.997 0 0 0 20 10V1a1 1 0 0 0-1-1zm-9 17.586L2.414 10 4 8.414 11.586 16 10 17.586zm8-8l-5 5L5.414 7l5-5H18v7.586zM15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2" id="ati"></path></defs> <g fill="none" fill-rule="evenodd"><path d="M4 7l-3 3 9 9 3-3z" fill="#FFF"></path> <mask fill="#fff" id="bti"><use xlink:href="#ati"></use></mask> <use fill="#BF0711" xlink:href="#ati"></use> <g fill="#919EAB" mask="url(#bti)"><path d="M0 0h23v20H0z"></path></g></g></svg></span> <span class="nav__item__link__text">Subscribers</span></a></div>
+                                <div class="nav__item hide">
+                                    <div class="nav__item__link nav__item__link--flex"><span class="nav__item__link__icon"><svg height="18" viewBox="0 0 22 22" width="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="10" cy="10" fill="#FFF" r="10" stroke-width="2"></circle> <path d="M7.748 5.055A2.742 2.742 0 0 0 5 7.803v4.886a2.742 2.742 0 0 0 2.748 2.748h4.886a2.742 2.742 0 0 0 2.748-2.748V7.803a2.742 2.742 0 0 0-2.748-2.748H7.748zm5.496 1.527a.61.61 0 1 1 0 1.221.61.61 0 0 1 0-1.221zm-3.053.763c1.598 0 2.9 1.303 2.9 2.901 0 1.599-1.302 2.9-2.9 2.9a2.905 2.905 0 0 1-2.9-2.9c0-1.598 1.301-2.9 2.9-2.9zm0 .611a2.285 2.285 0 0 0-2.29 2.29 2.285 2.285 0 0 0 2.29 2.29 2.285 2.285 0 0 0 2.29-2.29 2.285 2.285 0 0 0-2.29-2.29z" fill-rule="nonzero" stroke="none"></path></g></svg></span>                                        <span class="nav__item__link__text nav__item__link__text--flex"><span class="nav__item__link__text__item">Invoices</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nav__item"><a href="settings.html" class="nav__item__link nav__item__link--flex"><span class="nav__item__link__icon"><svg height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M19.492 11.897l-1.56-.88a7.8 7.8 0 0 0 0-2.035l1.56-.879a1.001 1.001 0 0 0 .37-1.38L17.815 3.26a1.001 1.001 0 0 0-1.353-.362l-1.491.841A8.078 8.078 0 0 0 13 2.586V1a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v1.586a8.053 8.053 0 0 0-1.97 1.152l-1.492-.84a1 1 0 0 0-1.352.361L.139 6.723a1.001 1.001 0 0 0 .37 1.38l1.559.88A7.829 7.829 0 0 0 2 10c0 .335.023.675.068 1.017l-1.56.88a.998.998 0 0 0-.37 1.38l2.048 3.464a.999.999 0 0 0 1.352.362l1.492-.842A7.99 7.99 0 0 0 7 17.413V19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1.587a8.014 8.014 0 0 0 1.97-1.152l1.492.842a1 1 0 0 0 1.353-.362l2.047-3.464a1.002 1.002 0 0 0-.37-1.38m-3.643-3.219c.1.448.15.893.15 1.322 0 .428-.05.873-.15 1.322-.097.43.1.873.484 1.09l1.287.725-1.03 1.742-1.252-.707a1 1 0 0 0-1.183.15 6.023 6.023 0 0 1-2.44 1.425 1 1 0 0 0-.715.96V18H9v-1.294a1 1 0 0 0-.714-.959 6.01 6.01 0 0 1-2.44-1.425 1.001 1.001 0 0 0-1.184-.15l-1.252.707-1.03-1.742 1.287-.726a.999.999 0 0 0 .485-1.089A6.043 6.043 0 0 1 4 10c0-.429.05-.874.152-1.322a1 1 0 0 0-.485-1.09L2.38 6.862 3.41 5.12l1.252.707a1 1 0 0 0 1.184-.149 6.012 6.012 0 0 1 2.44-1.426A1 1 0 0 0 9 3.294V2h2v1.294a1 1 0 0 0 .715.958c.905.27 1.749.762 2.44 1.426a1 1 0 0 0 1.183.15l1.253-.708 1.029 1.742-1.287.726a1 1 0 0 0-.484 1.09M9.999 6c-2.205 0-4 1.794-4 4s1.795 4 4 4c2.207 0 4-1.794 4-4s-1.793-4-4-4m0 6c-1.102 0-2-.897-2-2s.898-2 2-2c1.104 0 2 .897 2 2s-.896 2-2 2" id="settingsa"></path></defs> <g fill="none" fill-rule="evenodd"><path d="M10 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6m7-3c0-.53-.064-1.044-.176-1.541L19 7.232l-2.047-3.464-2.106 1.188A6.978 6.978 0 0 0 12 3.294V1H8v2.294a6.978 6.978 0 0 0-2.847 1.662L3.047 3.768 1 7.232l2.176 1.227A6.993 6.993 0 0 0 3 10c0 .53.064 1.044.176 1.541L1 12.768l2.047 3.464 2.106-1.188A6.99 6.99 0 0 0 8 16.706V19h4v-2.294a6.978 6.978 0 0 0 2.847-1.662l2.106 1.188L19 12.768l-2.176-1.227A6.993 6.993 0 0 0 17 10" fill="#FFF" stroke="none"></path> <mask fill="#fff" id="settingsb" stroke="none"><use xlink:href="#settingsa"></use></mask> <use stroke="none" xlink:href="#settingsa"></use> <g mask="url(#settingsb)" stroke="none"><path d="M0 0h23v20H0z" stroke="none"></path></g></g></svg></span> <span class="nav__item__link__text">Settings</span></a></div>
+                            <div class="nav__item nav__item--signout show--xs"><a class="nav__item__link nav__item__link--flex"><span class="nav__item__link__text">Sign Out</span></a></div>
+                        </div>
+                </div>
+
+                </nav>
+                <div aria-labelledby="createaccountLabel" id="createaccount" role="dialog" tabindex="-1" class="modal fade">
+                    <div role="document" class="modal__dialog modal__dialog--xs">
+                        <div class="modal__content">
+                            <div class="modal__header">
+                                <div class="modal__title">Create new business</div> <button aria-label="Close" data-dismiss="modal" type="button" class="close"><svg height="13" viewBox="0 0 13 13" width="13" xmlns="http://www.w3.org/2000/svg"><path d="M8.254 6.5l4.383-4.382A1.24 1.24 0 0 0 10.882.363L6.5 4.746 2.118.363A1.24 1.24 0 1 0 .363 2.118L4.746 6.5.363 10.882a1.24 1.24 0 0 0 1.755 1.755L6.5 8.254l4.382 4.383a1.24 1.24 0 1 0 1.755-1.755L8.254 6.5z" fill="#C0C6D8" fill-rule="nonzero"></path></svg></button></div>
+                            <div class="modal__body modal__body--pad">
+                                <form class="form">
+                                    <div class="form__pad">
+                                        <div class="form__item"><label for="" class="form__label">Business Name</label> <input type="text" class="form__input">
+                                            <!---->
+                                        </div>
+                                        <div class="form__item"><label for="" class="form__label">Business Email</label> <input type="email" class="form__input">
+                                            <!---->
+                                        </div>
+                                        <div class="form__item"><label for="" class="form__label">Select a business type</label>
+                                            <div class="select"><select class="select__input select__input--noRightBorderRadius"><option value="individual">An Individual</option> <option value="non-profit">An NGO</option> <option value="business">A Registered Business</option> <option value="events">An Event Manager</option></select>
+                                                <div class="select__icon"><svg height="10" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg"><path d="M6.03 3.03L3.025.025.02 3.03h6.01zM5.88 7.071L2.975 9.975.07 7.07H5.88z" fill="#637381" fill-rule="evenodd"></path></svg></div>
+                                            </div>
+                                            <!---->
+                                        </div>
+                                        <div class="form__item">
+                                            <div class="checkbox"><input id="parentsettings" type="checkbox" class="checkbox__input"> <label for="parentsettings" class="checkbox__label">Use the same account setting as my main account.</label></div>
+                                        </div>
+                                    </div>
+                                    <div class="form__footer"><button aria-label="Close" data-dismiss="modal" type="button" class="btn btn--default">Cancel</button> <button type="submit" class="btn btn--primary">Create business</button></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div tabindex="-1" role="dialog" class="modal fade" id="side-otp-modal">
+                    <div role="document" class="modal__dialog modal__dialog--md width400">
+                        <div class="modal__content">
+                            <div class="modal__header">
+                                <div class="modal__title">Enter OTP</div> <button type="button" data-dismiss="modal" aria-label="Close" class="close"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"><path fill="#C0C6D8" fill-rule="nonzero" d="M8.254 6.5l4.383-4.382A1.24 1.24 0 0 0 10.882.363L6.5 4.746 2.118.363A1.24 1.24 0 1 0 .363 2.118L4.746 6.5.363 10.882a1.24 1.24 0 0 0 1.755 1.755L6.5 8.254l4.382 4.383a1.24 1.24 0 1 0 1.755-1.755L8.254 6.5z"></path></svg></button></div>
+                            <div class="modal__body modal__body--pad">
+                                <form class="form">
+                                    <div class="form__pad">
+                                        <div class="form__item">
+                                            <p class="textCenter p-10"></p>
+                                            <p class="textCenter m-t-20 m-b-10">
+                                                Enter the confirmation code sent to
+                                                <strong>regorprotocol@gmail.com</strong> or
+                                                <strong>your phone number</strong> to complete this transfer
+                                            </p>
+                                            <form>
+                                                <div class="form__item">
+                                                    <div data-v-37b83cd0="" class="flex input-number form__input">
+                                                        <!----><input data-v-37b83cd0="" type="text" placeholder="" maxlength="10" spellcheck="false" class="borderless-form">
+                                                        <!---->
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <div class="textCenter resend-code"><svg height="16" viewBox="0 0 14 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m.48 7.022c.106 3.042 2.436 5.508 5.424 5.984l-2.986 1.476.085.162 3.305-1.634-1.678-3.2-.167.082 1.547 2.946c-2.938-.433-5.24-2.843-5.343-5.822-.118-3.37 2.616-6.209 6.095-6.33 3.479-.122 6.405 2.52 6.522 5.889.081 2.312-1.182 4.374-3.106 5.48l-.083.047.008.203.096-.053c2.023-1.127 3.357-3.273 3.272-5.683-.12-3.47-3.133-6.19-6.715-6.065s-6.398 3.049-6.277 6.518z" fill="#ffa512" stroke="#f5a623"></path></svg>                                                <span>Resend Code</span></div>
+                                        </div>
+                                        <div class="form__footer form__footer--flex form__footer--confirmTransfer">
+                                            <div class="form__footer__left"><span class="cursorPointer">&lt; Go back</span></div>
+                                            <div class="form__footer__right"><button type="button" aria-label="Close" class="btn btn--default">Cancel</button> <button disabled="disabled" type="submit" class="btn btn--primary">Confirm</button></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <main class="main">
+                <div class="main__container">
+                    <div class="nav-mobile show--xs">
+                        <div class="nav-mobile__container">
+                            <div class="nav-mobile__left">
+                                <div class="nav-mobile__item"></div>
+                            </div>
+                            <div class="nav-mobile__middle">
+                                <div class="nav-mobile__item">Settings</div>
+                            </div>
+                            <div class="nav-mobile__right">
+                                <div class="nav-mobile__item"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs">
+                        <div class="tabs__navigation">
+                            <div class="tabs__navigation__item">
+                                <div class="tabs__navigation__item__link router-link-exact-active active">General</div>
+                            </div>
+                            <div class="tabs__navigation__item">
+                                <div class="tabs__navigation__item__link">Bank Accounts</div>
+                            </div>
+                            <div class="tabs__navigation__item hidden--xs">
+                                <div class="tabs__navigation__item__link">Users</div>
+                            </div>
+                            <div class="tabs__navigation__item">
+                                <div class="tabs__navigation__item__link">API</div>
+                            </div>
+                            <div class="tabs__navigation__item hidden--xs">
+                                <div class="tabs__navigation__item__link">Webhooks</div>
+                            </div>
+                            <div class="tabs__navigation__item">
+                                <div class="tabs__navigation__item__link">Account <span class="hidden--xs">Settings</span></div>
+                            </div>
+                        </div>
+                        <div class="tabs__content">
+                            <div class="tabs__content__item active">
+                                <div class="panel">
+                                    <div class="panel__content">
+                                        <div class="row">
+                                            <div class="row__left">
+                                                <div class="row__item">
+                                                    <div class="page__result">Personal Information</div>
+                                                </div>
+                                            </div>
+                                            <div class="row__right">
+                                                <div class="row__item"><button class="btn btn--primary">Save</button></div>
+                                            </div>
+                                        </div>
+                                        <div class="personal-data">
+                                            <div class="form__row">
+                                                <div class="form__row__left"><label for="" class="form__label">First Name</label> <input type="text" class="form__input"></div>
+                                                <div class="form__row__right"><label for="" class="form__label">Last Name</label> <input type="text" class="form__input"></div>
+                                            </div>
+                                            <div class="form__item"><label for="" class="form__label">Email Address</label> <input type="text" class="form__input"> <span class="form__caption">We'll use this email if we need to contact you about your account.</span></div>
+                                            <div class="form__row">
+                                                <div class="form__row__left"><label for="" class="form__label">Phone Number</label> <input type="text" class="form__input"></div>
+                                            </div>
+                                            <div class="form__item"><label for="" class="form__label block">Password</label> <button data-toggle="modal" data-target="#changePassword" class="btn btn--default">Change password</button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel__content">
+                                        <div class="row">
+                                            <div class="row__left">
+                                                <div class="row__item">
+                                                    <div class="page__result">Business Information</div>
+                                                </div>
+                                            </div>
+                                            <div class="row__right">
+                                                <div class="row__item"><button class="btn btn--primary">Save</button></div>
+                                            </div>
+                                        </div>
+                                        <div class="business-data">
+                                            <div class="business-data__left">
+                                                <div class="form__row">
+                                                    <div class="form__row__left"><label for="" class="form__label">Business Name</label> <input type="text" disabled="disabled" class="form__input"></div>
+                                                    <div class="form__row__right"><label for="" class="form__label">Business Phone Number</label> <input type="text" placeholder="Required" class="form__input"></div>
+                                                </div>
+                                                <div class="form__row">
+                                                    <div class="form__row__left"><label for="" class="form__label">Business Email</label> <input type="text" disabled="disabled" class="form__input"></div>
+                                                    <div class="form__row__right"><label for="" class="form__label">Business Address</label> <input type="text" disabled="disabled" class="form__input"></div>
+                                                </div>
+                                                <div class="form__row">
+                                                    <div class="form__row__left"><label for="" class="form__label form__label--flex"><span>Support Email</span> <span class="label__info textRight small">What is this?
+                <span class="badge__info badge__info--left"><span class="badge__info__top">Support issues from your customers will be sent to this email</span></span></span></label> <input type="text" class="form__input"></div>
+                                                    <div class="form__row__right"><label for="" class="form__label form__label--flex"><span>Support Phone Number</span> <span class="label__info textRight small">What is this?
+                <span class="badge__info badge__info--left"><span class="badge__info__top">For more urgent situations where your customers prefer a phone call</span></span></span></label> <input type="text" class="form__input"></div>
+                                                </div>
+                                                <div class="form__row">
+                                                    <div class="form__row__left"><label for="" class="form__label">Country</label>
+                                                        <div class="select"><select name="" id="" disabled="disabled" class="select__input"><option value="AO">Angola</option><option value="BJ">Benin</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="CM">Cameroon</option><option value="CV">Cape Verde</option><option value="CF">Central African Republic</option><option value="TD">Chad</option><option value="CG">Congo</option><option value="CD">Congo, the Democratic Republic of the</option><option value="EG">Egypt</option><option value="GQ">Equatorial Guinea</option><option value="ET">Ethiopia</option><option value="GA">Gabon</option><option value="GM">Gambia</option><option value="GH">Ghana</option><option value="GN">Guinea</option><option value="KE">Kenya</option><option value="LR">Liberia</option><option value="MW">Malawi</option><option value="ML">Mali</option><option value="MZ">Mozambique</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="RW">Rwanda</option><option value="ST">Sao Tome and Principe</option><option value="SN">Senegal</option><option value="SL">Sierra Leone</option><option value="ZA">South Africa</option><option value="TG">Togo</option><option value="UG">Uganda</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option> <option value="US">United States of America</option> <option value="CI">Côte d'Ivoire</option> <option value="MU">Mauritius</option> <option value="MA">Morocco</option> <option value="TZ">Tanzania</option> <option value="GB">United Kingdom</option></select>
+                                                            <div class="select__icon"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10"><path fill="#637381" fill-rule="evenodd" d="M6.03 3.03L3.025.025.02 3.03h6.01zM5.88 7.071L2.975 9.975.07 7.07H5.88z"></path></svg></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form__row__right"><label for="" class="form__label form__label--flex"><span>Chargeback Email(s)</span></label>
+                                                        <div data-v-43f3af24="" class="input-select-tabs form__input positionRelative"> <span data-v-43f3af24="" placeholder=" " contenteditable="true" rows="1" class="editable-text editable-text--fat-padding"></span>
+                                                            <!---->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="business-data__right">
+                                                <div class="business-logo">
+                                                    <div class="business-logo__image">
+                                                        <div class="business-logo__image__value">IA</div>
+                                                    </div>
+                                                    <div class="business-logo__text">Upload business logo</div>
+                                                    <div class="business-logo__button"><button class="btn btn--default">Upload Image</button></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="changePassword" tabindex="-1" role="dialog" aria-labelledby="changePasswordLabel" class="modal fade">
+                                    <div role="document" class="modal__dialog modal__dialog--sm">
+                                        <div class="modal__content">
+                                            <div class="modal__header">
+                                                <div class="modal__title textCenter">Change Password</div> <button type="button" data-dismiss="modal" aria-label="Close" class="close"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13"><path fill="#C0C6D8" fill-rule="nonzero" d="M8.254 6.5l4.383-4.382A1.24 1.24 0 0 0 10.882.363L6.5 4.746 2.118.363A1.24 1.24 0 1 0 .363 2.118L4.746 6.5.363 10.882a1.24 1.24 0 0 0 1.755 1.755L6.5 8.254l4.382 4.383a1.24 1.24 0 1 0 1.755-1.755L8.254 6.5z"></path></svg></button></div>
+                                            <div class="modal__body modal__body--pad">
+                                                <form class="form">
+                                                    <div class="form__pad">
+                                                        <div class="form__item"><label for="" class="form__label">Old password</label> <input type="password" class="form__input">
+                                                            <!---->
+                                                        </div>
+                                                        <div class="form__item"><label for="" class="form__label">New password</label>
+                                                            <div class="positionRelative m-b-15">
+                                                                <div data-v-c3d050c8="" class="Password">
+                                                                    <div data-v-c3d050c8="" class="Password__group"><input data-v-c3d050c8="" type="password" name="password" id="password" placeholder="Please enter your password" required="required" class="form__input">
+                                                                        <div data-v-c3d050c8="" class="Password__icons">
+                                                                            <!---->
+                                                                            <div data-v-c3d050c8="" class="Password__toggle"><button data-v-c3d050c8="" aria-label="Show password" class="btn-clean"><svg data-v-c3d050c8="" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title data-v-c3d050c8="">Hide Password</title> <path data-v-c3d050c8="" d="M11.859 9h0.141c1.641 0 3 1.359 3 3v0.188zM7.547 9.797c-0.328 0.656-0.563 1.406-0.563 2.203 0 2.766 2.25 5.016 5.016 5.016 0.797 0 1.547-0.234 2.203-0.563l-1.547-1.547c-0.188 0.047-0.422 0.094-0.656 0.094-1.641 0-3-1.359-3-3 0-0.234 0.047-0.469 0.094-0.656zM2.016 4.266l1.266-1.266 17.719 17.719-1.266 1.266c-1.124-1.11-2.256-2.213-3.375-3.328-1.359 0.563-2.813 0.844-4.359 0.844-5.016 0-9.281-3.094-11.016-7.5 0.797-1.969 2.109-3.656 3.75-4.969-0.914-0.914-1.812-1.844-2.719-2.766zM12 6.984c-0.656 0-1.266 0.141-1.828 0.375l-2.156-2.156c1.219-0.469 2.578-0.703 3.984-0.703 5.016 0 9.234 3.094 10.969 7.5-0.75 1.875-1.922 3.469-3.422 4.734l-2.906-2.906c0.234-0.563 0.375-1.172 0.375-1.828 0-2.766-2.25-5.016-5.016-5.016z"></path></svg></button></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div data-v-c3d050c8="" class="Password__strength-meter">
+                                                                        <div data-v-c3d050c8="" data-score="0" class="Password__strength-meter--fill"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div> <span class="form__errors"><span class="form__errors__icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20"><path fill="#ED6347" stroke="none" fill-rule="evenodd" d="M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm-1-8h2V6H9v4zm0 4h2v-2H9v2z"></path></svg></span>                                                            <span class="form__errors__text">Password cannot be empty.</span></span>
+                                                        </div>
+                                                        <div class="form__item"><label for="" class="form__label">Confirm your new password</label>
+                                                            <div class="positionRelative"><input type="password" class="form__input">
+                                                                <div class="positionAbsolute" style="bottom: 5px; right: 13px;"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0zm0 0h24v24H0zm0 0h24v24H0zm0 0h24v24H0z" fill="none"></path> <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"></path></svg></div>
+                                                            </div>
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                    </div>
+                                                    <div class="form__footer"><button type="button" data-dismiss="modal" aria-label="Close" class="btn btn--default">Cancel</button> <button type="submit" class="btn btn--primary">Change password</button></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="passwordverify" tabindex="-1" role="dialog" aria-labelledby="sessionLabel" class="modal fade">
+                                    <div role="document" class="modal__dialog modal__dialog--sm">
+                                        <div class="modal__content">
+                                            <div class="modal__header">
+                                                <div class="modal__title text-center">Password Verification</div>
+                                            </div>
+                                            <div class="modal__body">
+                                                <form class="form">
+                                                    <div class="form__pad">
+                                                        <p class="form__caption" style="margin-top: 0px;">To save changes please enter your password</p>
+                                                        <div class="form__item"><input type="password" placeholder="Password" required="required" autofocus="autofocus" class="form__input"></div>
+                                                        <div class="form__item"><button type="submit" class="btn btn--primary btn--block">Continue</button></div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="otpVerify" tabindex="-1" role="dialog" aria-labelledby="otpVerifyLabel" class="modal fade">
+                                    <div role="document" class="modal__dialog width400">
+                                        <div class="modal__content">
+                                            <div class="modal__header">
+                                                <div class="modal__title textCenter">Change Business Phone Number</div>
+                                            </div>
+                                            <div class="modal__body modal__body--pad">
+                                                <form>
+                                                    <div class="form__pad">
+                                                        <div class="form__item">
+                                                            <p class="textCenter m-t-20 m-b-10">We just sent you a confirmation code to <strong>+2347057041998</strong>. Enter the code to update your business phone number.</p>
+                                                            <form>
+                                                                <div class="form__item"><input type="text" class="form__input">
+                                                                    <!---->
+                                                                </div>
+                                                            </form>
+                                                            <div class="textCenter resend-code"><svg height="16" viewBox="0 0 14 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m.48 7.022c.106 3.042 2.436 5.508 5.424 5.984l-2.986 1.476.085.162 3.305-1.634-1.678-3.2-.167.082 1.547 2.946c-2.938-.433-5.24-2.843-5.343-5.822-.118-3.37 2.616-6.209 6.095-6.33 3.479-.122 6.405 2.52 6.522 5.889.081 2.312-1.182 4.374-3.106 5.48l-.083.047.008.203.096-.053c2.023-1.127 3.357-3.273 3.272-5.683-.12-3.47-3.133-6.19-6.715-6.065s-6.398 3.049-6.277 6.518z" fill="#ffa512" stroke="#f5a623"></path></svg>                                                                <span>Resend OTP</span></div>
+                                                        </div>
+                                                        <div class="form__footer form__footer--flex form__footer--confirmTransfer">
+                                                            <div class="form__footer__left"></div>
+                                                            <div class="form__footer__right"><button type="button" data-dismiss="modal" aria-label="Close" class="btn btn--default">Cancel</button> <button type="submit" class="btn btn--primary">Update Business Phone</button></div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <div aria-labelledby="sessionLabel" id="session" role="dialog" tabindex="-1" class="modal fade">
+                <div role="document" class="modal__dialog modal__dialog--sm">
+                    <div class="modal__content">
+                        <div class="modal__header">
+                            <div class="modal__title text-center">Session Timeout</div>
+                        </div>
+                        <div class="modal__body">
+                            <form class="form">
+                                <div class="form__pad">
+                                    <div>
+                                        <p class="form__caption" style="margin-top: 0px;">To continue please enter your password</p>
+                                        <div class="form__item"><input readonly="readonly" type="email" class="form__input"></div>
+                                        <div class="form__item"><input autofocus="autofocus" placeholder="Password" required="required" type="password" class="form__input"></div>
+                                    </div>
+                                    <div class="form__item"><button type="submit" class="btn btn--primary btn--block">Continue</button></div>
+                                    <div class="form__item">
+                                        <div class="form__caption--login">Login with a different email address?</div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div aria-labelledby="onboardingLabel" id="onboarding" role="dialog" tabindex="-1" class="modal fade">
+                <div role="document" class="modal__dialog">
+                    <div class="modal__content">
+                        <div class="modal__body">
+                            <div class="onboard">
+                                <div class="onboard__intro"><span class="emoji">🎉</span> You have successfully created a Flutterwave account
+                                </div>
+                                <div class="onboard__caption">
+                                    Now get setup to
+                                    <span class="bold">collect payments</span> online and onsite.
+                                </div>
+                                <div class="onboard__action"><button type="button" class="btn btn--primary">Start collecting payments</button></div>
+                                <div class="onboard__skip"><span>I'll do this later</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---->
+    </div>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WD86DMC" height=0 width=0 style=display:none;visibility:hidden></iframe></noscript>
+    <script>
+        ! function(e, o, n) {
+            window.HSCW = o, window.HS = n, n.beacon = n.beacon || {};
+            var t = n.beacon;
+            t.userConfig = {}, t.readyQueue = [], t.config = function(e) {
+                this.userConfig = e
+            }, t.ready = function(e) {
+                this.readyQueue.push(e)
+            }, o.config = {
+                color: '#576ae6',
+                poweredBy: false,
+                autoInit: false,
+
+                icon: "message",
+                translation: {
+                    sendLabel: 'Send a message'
+                },
+                topics: [{
+                    val: 'need-help',
+                    label: 'Need help with the product'
+                }, {
+                    val: 'bug',
+                    label: 'I think I found a bug'
+                }],
+                docs: {
+                    enabled: !1,
+                    baseUrl: ""
+                },
+                contact: {
+                    enabled: !0,
+                    showName: true,
+                    showSubject: true,
+                    instructions: "How can we help?  Send a message",
+                    attachment: true,
+                    formId: "f54b1a6d-2afa-11e8-8d65-0ee9bb0328ce",
+                }
+            };
+            var r = e.getElementsByTagName("script")[0],
+                c = e.createElement("script");
+            c.type = "text/javascript", c.async = !0, c.src = "https://djtflbt20bdde.cloudfront.net", r.parentNode.insertBefore(c, r)
+        }(document, window.HSCW || {}, window.HS || {});
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="static/js/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"><\/script>')
+    </script>
+    <script src="static/js/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script id="checkoutInline" type="text/javascript" src="//checkout.flutterwave.com/inline-rave.js"></script>
+    <script src="https://static.filestackapi.com/v3/filestack.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="static/js/bootstrap.min.js" async="" defer="defer"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lclf-IZAAAAAL5sYE7JGcsh_FNeTodPHIOF0M7t"></script>
+    <script type="text/javascript" src="static/js/manifest.995beaca8e968d187b19.js"></script>
+    <script type="text/javascript" src="static/js/vendor.8fa0c71107173ea67626.js"></script>
+    <script type="text/javascript" src="static/js/app.33162e07ce4224c5fba9.js"></script>
+    <div>
+        <div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; position: fixed; visibility: hidden; display: block; transition: right 0.3s ease 0s; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;">
+            <div class="grecaptcha-logo"><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Lclf-IZAAAAAL5sYE7JGcsh_FNeTodPHIOF0M7t&amp;co=aHR0cHM6Ly9kYXNoYm9hcmQuZmx1dHRlcndhdmUuY29tOjQ0Mw..&amp;hl=en&amp;v=vzAt61JclNZYHl6fEWIBqLbe&amp;size=invisible&amp;cb=9n5ajekv87cm"
+                    width="256" height="60" role="presentation" name="a-nx5zxerunrc9" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div>
+            <div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div>
+        <iframe style="display: none;"></iframe>
+    </div><iframe id="intercom-frame" style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important; pointer-events: none;"
+        aria-hidden="true" tabindex="-1" title="Intercom"></iframe>
+    <div class="intercom-lightweight-app" aria-live="polite">
+        <style id="intercom-lightweight-app-style" type="text/css">
+            @keyframes intercom-lightweight-app-launcher {
+                from {
+                    opacity: 0;
+                    transform: scale(0.5);
+                }
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+            
+            @keyframes intercom-lightweight-app-gradient {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes intercom-lightweight-app-messenger {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .intercom-lightweight-app {
+                position: fixed;
+                z-index: 2147483001;
+                width: 0;
+                height: 0;
+                font-family: intercom-font, "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+            }
+            
+            .intercom-lightweight-app-gradient {
+                position: fixed;
+                z-index: 2147483002;
+                width: 500px;
+                height: 500px;
+                bottom: 0;
+                right: 0;
+                pointer-events: none;
+                background: radial-gradient( ellipse at bottom right, rgba(29, 39, 54, 0.16) 0%, rgba(29, 39, 54, 0) 72%);
+                animation: intercom-lightweight-app-gradient 200ms ease-out;
+            }
+            
+            .intercom-lightweight-app-launcher {
+                position: fixed;
+                z-index: 2147483003;
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background: #F5A623;
+                cursor: pointer;
+                box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.06), 0 2px 32px 0 rgba(0, 0, 0, 0.16);
+                animation: intercom-lightweight-app-launcher 250ms ease;
+            }
+            
+            .intercom-lightweight-app-launcher:focus {
+                outline: none;
+            }
+            
+            .intercom-lightweight-app-launcher-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 60px;
+                height: 60px;
+                transition: transform 100ms linear, opacity 80ms linear;
+            }
+            
+            .intercom-lightweight-app-launcher-icon-open {
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+            }
+            
+            .intercom-lightweight-app-launcher-icon-open svg {
+                width: 28px;
+                height: 32px;
+            }
+            
+            .intercom-lightweight-app-launcher-icon-open svg path {
+                fill: rgb(255, 255, 255);
+            }
+            
+            .intercom-lightweight-app-launcher-icon-self-serve {
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+            }
+            
+            .intercom-lightweight-app-launcher-icon-self-serve svg {
+                height: 56px;
+            }
+            
+            .intercom-lightweight-app-launcher-icon-self-serve svg path {
+                fill: rgb(255, 255, 255);
+            }
+            
+            .intercom-lightweight-app-launcher-custom-icon-open {
+                max-height: 36px;
+                max-width: 36px;
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+            }
+            
+            .intercom-lightweight-app-launcher-icon-minimize {
+                opacity: 0;
+                transform: rotate(-60deg) scale(0);
+            }
+            
+            .intercom-lightweight-app-launcher-icon-minimize svg {
+                width: 16px;
+            }
+            
+            .intercom-lightweight-app-launcher-icon-minimize svg path {
+                fill: rgb(255, 255, 255);
+            }
+            
+            .intercom-lightweight-app-messenger {
+                position: fixed;
+                z-index: 2147483003;
+                overflow: hidden;
+                background-color: white;
+                animation: intercom-lightweight-app-messenger 250ms ease-out;
+                width: 376px;
+                height: calc(100% - 40px);
+                max-height: 704px;
+                min-height: 250px;
+                right: 20px;
+                bottom: 20px;
+                box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+                border-radius: 8px;
+            }
+            
+            .intercom-lightweight-app-messenger-header {
+                height: 75px;
+                background: linear-gradient( 135deg, rgb(245, 166, 35) 0%, rgb(170, 109, 8) 100%);
+            }
+            
+            @media print {
+                .intercom-lightweight-app {
+                    display: none;
+                }
+            }
+        </style>
+    </div>
+</body>
+
+</html>
