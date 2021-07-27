@@ -36,6 +36,8 @@
 
 			else {
 				 $_SESSION['UserId'] = $Fetch["UserId"];
+				 $_SESSION['FullName'] = $Fetch["FullName"];
+
 				echo json_encode($Authentication);
 				return;
 			}
