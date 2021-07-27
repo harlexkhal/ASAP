@@ -5,15 +5,8 @@
 	$UserInfo=json_decode($_POST["x"], false);
 
 
-     $Email =     SanitizeString($UserInfo->Email);
+     $Email =     $UserInfo->Email;
      $Password =  $UserInfo->Password;
-
-
-	 if($Email == "RFID@gmail.com" && $Password == "RFID")
-	 {
-	   $_SESSION['UserId'] = 'Admin';
-	   echo 'Admin'; return;
-	 }
 
      $Authentication = array('Check'=>true,'Info'=>'');
 

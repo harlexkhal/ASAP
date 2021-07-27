@@ -296,6 +296,56 @@
             margin: unset
         }
     </style>
+
+    <script>
+        function SignUp()
+        {
+            for (var i = 0; i < 7; i++)
+            {
+                //ref is optional
+                if (i == 5)
+                    continue;
+
+                if((document.getElementsByName("UserInfo")[i].value).length <= 0)
+                    return;
+            }
+
+            var Obj, DbParam, XmlHttp;
+            Obj = {
+                "FullName": document.getElementsByName("UserInfo")[0].value,
+                "TradeName": document.getElementsByName("UserInfo")[1].value,
+                "Email": document.getElementsByName("UserInfo")[2].value,
+                "Country": document.getElementsByName("UserInfo")[3].value,
+                "AsapInfo": document.getElementsByName("UserInfo")[4].value,
+                "Ref": document.getElementsByName("UserInfo")[5].value,
+                "Password": document.getElementsByName("UserInfo")[6].value
+            };
+
+            DbParam = JSON.stringify(Obj);
+            XmlHttp = new XMLHttpRequest();
+
+            XmlHttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200)
+                {
+                    S_Response = JSON.parse(this.responseText);
+                    if (!S_Response[0]['Email'])
+                        document.getElementById("ErrorMessage").innerHTML = '<h5 style="color:red; text-align:center; font-size:medium">' + S_Response[1]['Email'] + '</h5>';
+                    else if (!S_Response[0]['Password'])
+                        document.getElementById("ErrorMessage").innerHTML = '<h5 style="color:red; text-align:center; font-size:medium">' + S_Response[1]['Password'] + '</h5>';
+                    else if (!S_Response[0]['FullName'])
+                        document.getElementById("ErrorMessage").innerHTML = '<h5 style="color:red; text-align:center; font-size:medium">' + S_Response[1]['FullName'] + '</h5>';
+                    else
+                        window.location.href = "../../Server/SendConfirmation.php?Email=" + S_Response[2]['Email'] + "&Key=" + S_Response[2]['key'] + "";
+                }
+            };
+
+            document.getElementById("ErrorMessage").innerHTML = '<h5 style="color:blue; text-align:center; font-size:medium">Please Wait..., while we process your operation</h5>';
+            XmlHttp.open("POST", "../../Server/SignUp.php", true);
+            XmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            XmlHttp.send("x=" + DbParam);
+
+        }
+    </script>
 </head>
 
 <body class="nprogress-container" page-name="register">
@@ -316,36 +366,40 @@
                     </div>
                 </div>
                 <div data-v-754a8970="" class="signup__list">
-                    <form data-v-754a8970="">
-                        <div data-v-754a8970="" class="signup__field"><label data-v-754a8970="">Full name</label> <input data-v-754a8970="" placeholder="Firstname Lastname" type="text" class="form__input">
+                    <div id="ErrorMessage"></div>
+                    <form onsubmit="return false">
+                        <div data-v-754a8970="" class="signup__field"><label data-v-754a8970="">Full name</label> <input required name="UserInfo" placeholder="Firstname Lastname" type="text" class="form__input">
                             <!---->
                         </div>
-                        <div data-v-754a8970="" class="signup__field"><label data-v-754a8970="">Trading name</label> <input data-v-754a8970="" type="text" class="form__input">
+                        <div data-v-754a8970="" class="signup__field"><label data-v-754a8970="">Trading name</label> <input required name="UserInfo" type="text" class="form__input">
                             <!---->
                         </div>
-                        <div data-v-754a8970="" class="signup__field"><label data-v-754a8970="">Email address</label> <input data-v-754a8970="" placeholder="aasir_makena@flutterwave.com" type="email" class="form__input">
+                        <div data-v-754a8970="" class="signup__field"><label data-v-754a8970="">Email address</label> <input required name="UserInfo" placeholder="aasir_makena@flutterwave.com" type="email" class="form__input">
                             <!---->
                         </div>
                         <div data-v-754a8970="" class="signup__field"><label data-v-754a8970="">What country is your business
                 based?</label>
-                            <div data-v-754a8970="" class="select"><select data-v-754a8970="" id="" name="" class="select__input">
-                  <option data-v-754a8970="" value="CM">Cameroon</option>
-                  <option data-v-754a8970="" value="CI">Côte d'Ivoire</option>
-                  <option data-v-754a8970="" value="EG">Egypt</option>
-                  <option data-v-754a8970="" value="GH">Ghana</option>
-                  <option data-v-754a8970="" value="KE">Kenya</option>
-                  <option data-v-754a8970="" value="MW">Malawi</option>
-                  <option data-v-754a8970="" value="MU">Mauritius</option>
-                  <option data-v-754a8970="" value="MA">Morocco</option>
-                  <option data-v-754a8970="" value="MZ">Mozambique</option>
-                  <option data-v-754a8970="" value="NG">Nigeria</option>
-                  <option data-v-754a8970="" value="RW">Rwanda</option>
-                  <option data-v-754a8970="" value="ZA">South Africa</option>
-                  <option data-v-754a8970="" value="TZ">Tanzania</option>
-                  <option data-v-754a8970="" value="UG">Uganda</option>
-                  <option data-v-754a8970="" value="ZM">Zambia</option>
-                </select>
-                                <div data-v-754a8970="" class="select__icon"><svg data-v-754a8970="" height="10" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
+                    <div data-v-754a8970="" class="select">
+                        <select data-v-754a8970="" id="" name="UserInfo" class="select__input" required>
+                                <option data-v-754a8970="" value="">Select A Coutry</option>
+                                <option data-v-754a8970="" value="Cameroon">Cameroon</option>
+                                <option data-v-754a8970="" value="Côte d'Ivoire">Côte d'Ivoire</option>
+                                <option data-v-754a8970="" value="Egypt">Egypt</option>
+                                <option data-v-754a8970="" value="Ghana">Ghana</option>
+                                <option data-v-754a8970="" value="Kenya">Kenya</option>
+                                <option data-v-754a8970="" value="Malawi">Malawi</option>
+                                <option data-v-754a8970="" value="Mauritius">Mauritius</option>
+                                <option data-v-754a8970="" value="Morocco">Morocco</option>
+                                <option data-v-754a8970="" value="Mozambique">Mozambique</option>
+                                <option data-v-754a8970="" value="Nigeria">Nigeria</option>
+                                <option data-v-754a8970="" value="Rwanda">Rwanda</option>
+                                <option data-v-754a8970="" value="South Africa">South Africa</option>
+                                <option data-v-754a8970="" value="Tanzania">Tanzania</option>
+                                <option data-v-754a8970="" value="Uganda">Uganda</option>
+                                <option data-v-754a8970="" value="Zambia">Zambia</option>
+                        </select>
+                    <div data-v-754a8970="" class="select__icon"><svg data-v-754a8970="" height="10" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
+
                     <path data-v-754a8970="" d="M6.03 3.03L3.025.025.02 3.03h6.01zM5.88 7.071L2.975 9.975.07 7.07H5.88z"
                       fill="#637381" fill-rule="evenodd"></path>
                   </svg></div>
@@ -353,26 +407,29 @@
                         </div>
                         <div data-v-754a8970="" class="signup__field"><label data-v-754a8970="">How did you hear about
                 ASAP?</label>
-                            <div data-v-754a8970="" class="select"><select data-v-754a8970="" id="" name="" class="select__input">
-                  <option data-v-754a8970="">On Social Media</option>
-                  <option data-v-754a8970="">From a friend</option>
-                  <option data-v-754a8970="">Via a webinar</option>
-                  <option data-v-754a8970="">From a blogpost</option>
-                  <option data-v-754a8970="">From a Google Search</option>
-                  <option data-v-754a8970="">In the news</option>
-                </select>
-                                <div data-v-754a8970="" class="select__icon"><svg data-v-754a8970="" height="10" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
+                        <div data-v-754a8970="" class="select">
+                            <select data-v-754a8970="" id="" name="UserInfo" class="select__input" required>
+                                <option value="">Select</option>
+                                <option value="On Social Media">On Social Media</option>
+                                <option value="From a friend">From a friend</option>
+                                <option value="Via a webinar">Via a webinar</option>
+                                <option value="From a blogpost">From a blogpost</option>
+                                <option value="From a Google Search">From a Google Search</option>
+                                <option value="In the news">In the news</option>
+                            </select>
+
+                       <div data-v-754a8970="" class="select__icon"><svg data-v-754a8970="" height="10" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg">
                     <path data-v-754a8970="" d="M6.03 3.03L3.025.025.02 3.03h6.01zM5.88 7.071L2.975 9.975.07 7.07H5.88z"
                       fill="#637381" fill-rule="evenodd"></path>
                   </svg></div>
                             </div>
                         </div>
                         <div data-v-754a8970="" class="signup__field"><label data-v-754a8970="">Got a referral code?
-                (optional)</label> <input data-v-754a8970="" type="text" placeholder="Enter referral code" class="form__input"></div>
+                (optional)</label> <input data-v-754a8970="" type="text" name = "UserInfo" placeholder="Enter referral code" class="form__input"></div>
                         <div data-v-754a8970="" class="signup__field"><label data-v-754a8970="">Choose a Password</label>
                             <div data-v-754a8970="" class="positionRelative">
                                 <div data-v-c3d050c8="" data-v-754a8970="" class="Password">
-                                    <div data-v-c3d050c8="" class="Password__group"><input data-v-c3d050c8="" type="password" name="password" id="password" placeholder="Please enter your password" required="required" class="form__input">
+                                    <div data-v-c3d050c8="" class="Password__group"><input required data-v-c3d050c8="" type="password" name="UserInfo" id="password" placeholder="Please enter your password" required="required" class="form__input" value=" skjakljfkldajfljaljsall">
                                         <div data-v-c3d050c8="" class="Password__icons">
                                             <!---->
                                             <div data-v-c3d050c8="" class="Password__toggle"><button data-v-c3d050c8="" aria-label="Show password" class="btn-clean"><svg data-v-c3d050c8="" version="1.1"
@@ -397,7 +454,7 @@
                     empty.</span></span>
                             </span>
                         </div>
-                        <div data-v-754a8970="" class="signup__field m-t-30"><button data-v-754a8970="" class="btn btn--lg btn--block btn--primary btn--fontRegular" disabled="disabled">Get started</button>
+                        <div data-v-754a8970="" class="signup__field m-t-30"><button data-v-754a8970="" class="btn btn--lg btn--block btn--primary btn--fontRegular" onclick="SignUp();">Get started</button>
                         </div>
                         <div data-v-754a8970=""><label data-v-754a8970="" class="terms-checkbox"><input data-v-754a8970=""
                   type="checkbox"> <span data-v-754a8970="" class="checkmark"></span></label> I acknowledge that I have read and do hereby accept the terms and conditions in the ASAP's

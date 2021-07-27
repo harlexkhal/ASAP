@@ -14,21 +14,23 @@
 
   CreateTable( 'UserInfo',
                  'UserId VARCHAR(255),
-			            FirstName VARCHAR(255),
-			            LastName VARCHAR(255),
+			            FullName VARCHAR(255),
 			            Email VARCHAR(255),
 			            Password VARCHAR(255),
-                  Phone  VARCHAR(20),
+					    Country VARCHAR(20),
+						TradeName VARCHAR(100),
+						Ref VARCHAR(100),
                   EWallet DECIMAL(10,2)');
 
   CreateTable( 'EmailConfirmation',
                  'RandomKey VARCHAR(512),
 			            UserId VARCHAR(255),
-			          	FirstName VARCHAR(255),
-			          	LastName VARCHAR(255),
+			          	FullName VARCHAR(255),
 			          	Email    VARCHAR(255),
-                  Password VARCHAR(255),
-                  Phone    VARCHAR(32)');
+						Country VARCHAR(20),
+						TradeName VARCHAR(100),
+						Ref VARCHAR(100),
+                  Password VARCHAR(255)');
 ?>
 
  <br>...done.
