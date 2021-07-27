@@ -6,7 +6,7 @@
 
 
      $Email =     $UserInfo->Email;
-     $Password =  $UserInfo->Password;
+     $Password =  md5($UserInfo->Password);
 
      $Authentication = array('Check'=>true,'Info'=>'');
 
