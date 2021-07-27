@@ -28,7 +28,8 @@
     $Sql= "DELETE FROM EmailConfirmation WHERE RandomKey = '$Key'";
 	 $Connection->query($Sql);
 
-	 $_SESSION['User'] = $UserId;
+	 $_SESSION['FullName'] = $FullName;
+     $_SESSION['UserId'] = $UserId;
      
 	header("Location: ../Client/docs/overview.html"); //<---Link to Set password page--->
 ?>
