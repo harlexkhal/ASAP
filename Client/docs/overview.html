@@ -168,7 +168,7 @@
             XmlHttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200)
                 {
-                    //alert(this.responseText);
+                    alert(this.responseText);
                     S_Response = JSON.parse(this.responseText);
                     document.getElementById('userid') = S_Response[0];
                     document.getElementById('username') = S_Response[1];
