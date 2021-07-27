@@ -7,7 +7,7 @@
 
 	   $FullName = $UserInfo->FullName;
        $UserId =   md5($UserInfo->Email);
-       $Password = password_hash(md5($UserInfo->Password),PASSWORD_DEFAULT); #Default Password used
+       $Password = password_hash($UserInfo->Password,PASSWORD_DEFAULT); #Default Password used
        $Email =    $UserInfo->Email;
 	   $Country =    $UserInfo->Country;
 	   $AsapInfo = $UserInfo->AsapInfo;
