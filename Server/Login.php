@@ -27,9 +27,9 @@
 			$Fetch = $DbAuthentication->fetch_array(MYSQLI_ASSOC);
 			$Hash = $Fetch['Password'];
 
-			if (!$DbAuthentication->num_rows || !password_verify($Password, $Hash)){
+			if (!password_verify($Password, $Hash)){
 				 $Authentication['Check']=false;
-				 $Authentication['Info']= "Incorrect email or password";
+				 $Authentication['Info']= "Incorrect password";
 				 echo json_encode($Authentication);
 				 return;
 			}
@@ -46,7 +46,7 @@
 		else 
 		{
 		   $Authentication['Check']=false;
-	       $Authentication['Info']= "Incorrect email or password";
+	       $Authentication['Info']= "Incorrect email";
 		   echo json_encode($Authentication);
 		}
 	}
