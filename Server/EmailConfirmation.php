@@ -8,7 +8,11 @@
     $Result=$Connection->query($Sql);
 
 	if(!$Result->num_rows)
-	    header("Location: #"); #link to 404 Error the link has Expired page info.
+    {
+      header("Location: ../Client/docs/Error.html"); #link to 404 Error the link has Expired page info.
+
+      return;
+    }
 
     $Row  = $Result->fetch_array(MYSQLI_ASSOC);
    
