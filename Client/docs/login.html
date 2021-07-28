@@ -95,7 +95,6 @@
             XmlHttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200)
                 {
-                    alert(this.responseText);
                     S_Response = JSON.parse(this.responseText);
                     if (S_Response['Check'] == false)
                         document.getElementById("ErrorMessage").innerHTML = '<h5 style="color:red; text-align:center; font-size:medium">' + S_Response['Info'] + '</h5>';

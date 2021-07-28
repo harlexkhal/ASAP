@@ -158,29 +158,6 @@
                 }
             }
         })();
-
-        function Onload() {
-            var Obj, DbParam, XmlHttp;
-
-            DbParam = JSON.stringify(Obj);
-            XmlHttp = new XMLHttpRequest();
-
-            XmlHttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200)
-                {
-                    S_Response = JSON.parse(this.responseText);
-                    alert(S_Response[0]);
-                    document.getElementById('userid').innerHTML = S_Response[0];
-                    document.getElementById('username').innerHTML = S_Response[1];
-                }
-            };
-
-            XmlHttp.open("POST", "../../Server/Overview.php", true);
-            XmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            XmlHttp.send("x=" + DbParam);
-        }
-
-        Onload();
     </script>
 
     <link href="static/css/app.4f7987a5041c63d955a8ca6fdd34f1e0.css" rel="stylesheet">
@@ -2111,8 +2088,8 @@
                                             <div class="company company--negativeTopMargin">
                                                 <div class="company__row">
                                                     <div class="company__content">
-                                                        <div class="company__name" id="username">...</div>
-                                                        <div class="company__position">Merchant ID: <p id="username">4444</p></div>
+                                                        <div id="username">...</div>
+                                                        <div>Merchant ID:<p id="userid">...</p></div>
                                                     </div>
                                                     <div class="company__toggle"><svg height="10" viewBox="0 0 6 10" width="6" xmlns="http://www.w3.org/2000/svg"><path d="M6.03 3.03L3.025.025.02 3.03h6.01zM5.88 7.071L2.975 9.975.07 7.07H5.88z" fill="#637381" fill-rule="evenodd"></path></svg></div>
                                                 </div>
@@ -3233,6 +3210,30 @@
     </div>
     <script src="https://static.filestackapi.com/picker/v3/picker-0.12.11.js" id="__filestack-picker-module"></script>
     <div class="iziToast-wrapper iziToast-wrapper-topRight"></div>
+
+    <script>
+        function Onload() {
+            var Obj, DbParam, XmlHttp;
+
+            DbParam = JSON.stringify(Obj);
+            XmlHttp = new XMLHttpRequest();
+
+            XmlHttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    S_Response = JSON.parse(this.responseText);
+                    document.getElementById('userid').innerHTML = S_Response[0];
+                    document.getElementById('username').innerHTML = S_Response[1];
+                }
+            };
+
+            XmlHttp.open("POST", "../../Server/Overview.php", true);
+            XmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            XmlHttp.send("x=" + DbParam);
+        }
+
+        Onload();
+
+    </script>
 </body>
 
 </html>
