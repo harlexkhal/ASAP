@@ -2,6 +2,9 @@
     session_start();
 	require_once 'Dependencies.php';  
 
-    $Sql= "DELETE FROM UserInfo WHERE Email = 'harlexibeh01@gmail.com'";
+    $Sql= "DROP TABLE UserInfo";
+	$Connection->query($Sql);
+
+	$Sql= "DROP TABLE EmailConfirmation";
 	$Connection->query($Sql);
 ?>
