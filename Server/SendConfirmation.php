@@ -27,7 +27,7 @@
     $mail->addAddress("$Email",'New User'); 
     $mail->Subject = 'Signup Email Confirmation';
     $mail->Body    = "To complete registration on Asap  
-					   <a href='http://asap-web.herokuapp.com/Server/EmailConfirmation.php?ConfirmationKey=$ConfirmationKey' style='color=white !important; text-decoration:none; padding:13px;'>
+					   <a href='https://asap-web.herokuapp.com/Server/EmailConfirmation.php?ConfirmationKey=$ConfirmationKey' style='color=white !important; text-decoration:none; padding:13px;'>
 					   Click
 					   </a>";
 
